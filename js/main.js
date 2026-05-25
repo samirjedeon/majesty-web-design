@@ -394,16 +394,14 @@
 (function () {
   const canvas = document.getElementById('hero-canvas');
   if (!canvas) return;
-  // Kill particles entirely on mobile — big perf win
-  if (window.innerWidth < 768) { canvas.style.display = 'none'; return; }
 
   const ctx = canvas.getContext('2d');
   const hero = canvas.closest('.hero');
 
   const COLORS = ['0,212,255', '139,92,246', '59,130,246'];
   const isMobile = window.innerWidth < 768;
-  const COUNT = isMobile ? 20 : 80;
-  const CONNECT_DIST = isMobile ? 80 : 150;
+  const COUNT = isMobile ? 25 : 80;
+  const CONNECT_DIST = isMobile ? 0 : 150;
   const MOUSE_RADIUS = 140;
   const MOUSE_STRENGTH = 6;
 
@@ -425,7 +423,7 @@
     this.vy = (Math.random() - 0.5) * 0.45;
     this.r  = Math.random() * 1.5 + 0.7;
     this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
-    this.alpha = isMobile ? Math.random() * 0.15 + 0.1 : Math.random() * 0.3 + 0.3;
+    this.alpha = isMobile ? Math.random() * 0.12 + 0.06 : Math.random() * 0.3 + 0.3;
   }
 
   Particle.prototype.update = function () {
