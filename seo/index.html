@@ -22,6 +22,9 @@
     .rank-arrow { font-size: 0.75rem; color: var(--gray-500); }
     @media (max-width: 900px) { .seo-pillars { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 600px) { .seo-pillars { grid-template-columns: 1fr; } }
+    .two-col-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .two-col-section > * { min-width: 0; }
+    @media (max-width: 768px) { .two-col-section { grid-template-columns: 1fr; gap: 2rem; } }
   </style>
   <!-- SEO: Canonical -->
   <link rel="canonical" href="https://www.majestywebdesign.com/seo.html" />
@@ -117,13 +120,13 @@
   <!-- WHY SEO MATTERS -->
   <section class="section">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+      <div class="two-col-section">
         <div>
           <div class="section-label reveal">The Reality</div>
           <h2 class="section-title reveal delay-1">Your Competitors Are<br /><span class="text-gradient">Stealing Your Customers</span></h2>
           <p style="color:var(--gray-400);line-height:1.8;margin-bottom:1.5rem" class="reveal delay-2">Right now, when a potential customer in your area searches for your services, they're finding your competitors — not you. That's lost revenue every single day.</p>
           <p style="color:var(--gray-400);line-height:1.8;margin-bottom:2rem" class="reveal delay-3">Our SEO services help you climb Google's rankings, show up in local map results, and capture the customers who are actively searching for exactly what you offer.</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem" class="reveal delay-4">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:100%" class="reveal delay-4">
             <div style="padding:1.25rem;background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.15);border-radius:0.75rem;text-align:center">
               <div style="font-size:2rem;font-weight:800;background:var(--gradient-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">75%</div>
               <div style="font-size:0.8rem;color:var(--gray-400);margin-top:0.25rem">of clicks go to the top 3 results</div>
