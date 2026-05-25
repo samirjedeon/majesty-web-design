@@ -394,6 +394,8 @@
 (function () {
   const canvas = document.getElementById('hero-canvas');
   if (!canvas) return;
+  // Kill particles entirely on mobile — big perf win
+  if (window.innerWidth < 768) { canvas.style.display = 'none'; return; }
 
   const ctx = canvas.getContext('2d');
   const hero = canvas.closest('.hero');
