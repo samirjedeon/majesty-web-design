@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Majesty Web Design | Get Your Free Quote</title>
+  <meta name="description" content="Get in touch with Majesty Web Design. Free consultation, no commitment. We respond within 24 hours. Michigan's top web design agency for small businesses." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--bg-glass-border); border-radius: 1rem; transition: all var(--ease-base); }
+    .contact-info-item:hover { border-color: rgba(0,212,255,0.2); background: var(--bg-card-hover); }
+    .contact-info-icon { width: 44px; height: 44px; border-radius: 0.625rem; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-info-icon svg { width: 20px; height: 20px; stroke: var(--cyan); }
+    .contact-info-title { font-weight: 700; margin-bottom: 0.25rem; font-size: 0.9375rem; }
+    .contact-info-value { font-size: 0.875rem; color: var(--gray-400); line-height: 1.5; }
+    .contact-info-value a { color: var(--gray-300); transition: color var(--ease-fast); }
+    .contact-info-value a:hover { color: var(--cyan); }
+    .form-card { background: var(--bg-card); border: 1px solid var(--bg-glass-border); border-radius: 1.5rem; padding: 2.5rem; }
+    .select-wrapper { position: relative; }
+    .select-wrapper::after { content: '▾'; position: absolute; right: 1.125rem; top: 50%; transform: translateY(-50%); color: var(--gray-500); pointer-events: none; font-size: 0.875rem; }
+    .trust-badges { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+    .trust-badge { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; color: var(--gray-400); }
+    .trust-badge-dot { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; }
+    .contact-grid > * { min-width: 0; } /* prevent grid blowout */
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    @media (max-width: 768px) { .form-card { padding: 1.5rem; } }
+  </style>
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://www.majestywebdesign.com/contact.html" />
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.majestywebdesign.com/contact.html" />
+  <meta property="og:title" content="Contact Majesty Web Design — Free Consultation | Michigan" />
+  <meta property="og:description" content="Get in touch for a free website consultation. No commitment. We respond within 24 hours. Michigan's top web design agency for small businesses." />
+  <meta property="og:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <meta property="og:site_name" content="Majesty Web Design" />
+  <meta property="og:locale" content="en_US" />
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Majesty Web Design — Free Consultation | Michigan" />
+  <meta name="twitter:description" content="Get in touch for a free website consultation. No commitment. We respond within 24 hours. Michigan's top web design agency for small businesses." />
+  <meta name="twitter:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <!-- SEO: Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://www.majestywebdesign.com/#business",
+    "name": "Majesty Web Design",
+    "description": "Michigan's premier web design agency helping small businesses grow online with affordable monthly website packages.",
+    "url": "https://www.majestywebdesign.com",
+    "logo": "https://www.majestywebdesign.com/images/logo.webp",
+    "image": "https://www.majestywebdesign.com/images/logo.webp",
+    "telephone": "+16169157546",
+    "email": "majestywebdesign@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
+    "areaServed":[{"@type":"State","name":"Michigan"},{"@type":"City","name":"Detroit","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Warren","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Sterling Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Troy","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Southfield","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Royal Oak","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Farmington Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Livonia","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Novi","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Ann Arbor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Macomb","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Pontiac","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Rochester Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Canton","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Dearborn","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Westland","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Taylor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Lansing","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Grand Rapids","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Flint","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Clinton Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Shelby Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Utica","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Madison Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Roseville","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Saint Clair Shores","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Chesterfield","containedInPlace":{"@type":"State","name":"Michigan"}}],
+    "priceRange": "$$",
+    "openingHoursSpecification": [{"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "18:00"}],
+    "sameAs":[],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"7","bestRating":"5","worstRating":"1"}
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "url": "https://www.majestywebdesign.com/contact.html",
+    "name": "Contact Majesty Web Design",
+    "description": "Get a free website consultation from Majesty Web Design. No commitment required."
+  }
+  ]
+  </script>
+
+  <!-- SEO: BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.majestywebdesign.com/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://www.majestywebdesign.com/contact.html"}]}
+  </script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRBPFDXPTJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VRBPFDXPTJ');
+  </script>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="services.html">Services <span class="drop-icon">▾</span></a><ul class="dropdown-menu"><li><a href="services.html">All Services</a></li><li><a href="seo.html">SEO Services</a></li><li><a href="custom-websites.html">Custom Websites</a></li><li><a href="industries.html">Industries We Serve</a></li></ul></li>
+      <li class="nav-dropdown"><a href="pricing.html">Pricing <span class="drop-icon">▾</span></a><ul class="dropdown-menu"><li><a href="pricing.html">Pricing Overview</a></li><li><a href="packages.html">Website Packages</a></li><li><a href="monthly-plans.html">Monthly Plans</a></li></ul></li>
+      <li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="blog.html">Resources</a></li><li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-actions"><a href="tel:+16169157546" class="btn btn-outline btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 4.69 12 19.79 19.79 0 0 1 1.2 3.18 2 2 0 0 1 3.18 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.82 5.82l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16l-.36-.07"/></svg> Call Us</a><a href="contact.html" class="btn btn-primary btn-sm">Get Started</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="seo.html">SEO Services</a><a href="custom-websites.html">Custom Websites</a><a href="portfolio.html">Portfolio</a><a href="pricing.html">Pricing</a><a href="packages.html">Website Packages</a><a href="monthly-plans.html">Monthly Plans</a><a href="industries.html">Industries</a><a href="blog.html">Resources</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><div class="mobile-cta"><a href="contact.html" class="btn btn-primary w-full" style="justify-content:center">Get Your Free Quote</a></div></div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-bg"><div class="hero-orb hero-orb-1" style="opacity:0.25"></div><div class="hero-orb hero-orb-2" style="opacity:0.2"></div><div class="hero-grid"></div></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span>Contact</span></nav>
+      <div class="section-label" style="justify-content:center">Get In Touch</div>
+      <h1 class="section-title reveal" style="font-size:clamp(2.25rem,5vw,3.5rem);margin-bottom:1.25rem">Let's Talk About<br /><span class="text-gradient">Your Website</span></h1>
+      <p class="section-subtitle mx-auto reveal delay-1">No pressure, no jargon, no commitment. Just an honest conversation about your business and how we can help you grow online.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Left: Info -->
+        <div class="reveal">
+          <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:0.75rem">We're Here to Help</h2>
+          <p style="color:var(--gray-400);line-height:1.75;margin-bottom:2rem">Reach out by form, email, or phone. We respond to all inquiries within 24 hours during business days.</p>
+
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div>
+                <div class="contact-info-title">Email</div>
+                <div class="contact-info-value"><a href="mailto:majestywebdesign@gmail.com">majestywebdesign@gmail.com</a></div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 4.69 12 19.79 19.79 0 0 1 1.2 3.18 2 2 0 0 1 3.18 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.82 5.82l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16l-.36-.07"/></svg></div>
+              <div>
+                <div class="contact-info-title">Phone</div>
+                <div class="contact-info-value"><a href="tel:+16169157546">(616) 915-7546</a><br /><span style="font-size:0.8125rem">Mon–Fri 9am–6pm EST</span></div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div>
+                <div class="contact-info-title">Location</div>
+                <div class="contact-info-value">Michigan, United States<br /><span style="font-size:0.8125rem">Serving businesses nationwide</span></div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div>
+                <div class="contact-info-title">Response Time</div>
+                <div class="contact-info-value">Within 24 hours guaranteed<br /><span style="font-size:0.8125rem">Usually much faster</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trust-badges">
+            <div class="trust-badge"><div class="trust-badge-dot"></div>No-pressure consultation</div>
+            <div class="trust-badge"><div class="trust-badge-dot"></div>Free quote, always</div>
+            <div class="trust-badge"><div class="trust-badge-dot"></div>Michigan-based team</div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="form-card reveal delay-2">
+          <h2 style="font-size:1.375rem;font-weight:700;margin-bottom:0.5rem">Get Your Free Quote</h2>
+          <p style="font-size:0.9rem;color:var(--gray-400);margin-bottom:2rem">Fill out the form below and we'll send you a custom quote within 24 hours.</p>
+
+          <form id="contact-form" novalidate>
+            <!-- Honeypot spam protection — must stay hidden -->
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="first-name">First Name *</label>
+                <input type="text" id="first-name" name="first_name" class="form-input" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="last-name">Last Name *</label>
+                <input type="text" id="last-name" name="last_name" class="form-input" placeholder="Smith" required />
+              </div>
+            </div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="john@company.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="(586) 000-0000" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="business">Business Name *</label>
+              <input type="text" id="business" name="business" class="form-input" placeholder="Your Business Name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="service">Service Interested In *</label>
+              <div class="select-wrapper">
+                <select id="service" name="service" class="form-select form-input" required>
+                  <option value="" disabled selected>Select a service...</option>
+                  <option>Free Homepage Preview (No Cost · No Commitment)</option>
+                  <option>Starter Plan – $149/mo (or $119/mo annual)</option>
+                  <option>Growth Plan – $199/mo (or $159/mo annual)</option>
+                  <option>Elite Plan – $249/mo (or $199/mo annual)</option>
+                  <option>Custom / Not Sure Yet</option>
+                  <option>SEO Services</option>
+                  <option>Custom Website</option>
+                  <option>Website Redesign</option>
+                  <option>Not sure — need advice</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="website">Current Website (if any)</label>
+              <input type="url" id="website" name="website" class="form-input" placeholder="https://yourwebsite.com" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Tell Us About Your Business *</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="What does your business do? Who are your customers? What are your biggest goals online?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-full" style="justify-content:center;font-size:1rem;padding:1rem">
+              Send Message &amp; Get Free Quote
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p style="font-size:0.8rem;color:var(--gray-500);text-align:center;margin-top:1rem">By submitting this form you agree to our <a href="privacy.html" style="color:var(--gray-400)">Privacy Policy</a>. We never share your information.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT HAPPENS NEXT -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="section-label reveal">What to Expect</div>
+        <h2 class="section-title reveal delay-1">What Happens <span class="text-gradient">After You Submit</span></h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal delay-1">
+          <div class="process-step-number">01</div>
+          <h3>We Review Your Info</h3>
+          <p>We'll look over your submission within 24 hours and research your industry and competitors.</p>
+        </div>
+        <div class="process-step reveal delay-2">
+          <div class="process-step-number">02</div>
+          <h3>Free Strategy Call</h3>
+          <p>We schedule a 20-minute call to discuss your goals, answer questions, and recommend the right plan.</p>
+        </div>
+        <div class="process-step reveal delay-3">
+          <div class="process-step-number">03</div>
+          <h3>Custom Quote Sent</h3>
+          <p>You receive a detailed, no-obligation quote with clear pricing and exactly what's included.</p>
+        </div>
+        <div class="process-step reveal delay-4">
+          <div class="process-step-number">04</div>
+          <h3>We Start Building</h3>
+          <p>Once you're ready, we kick off the project and have your new site live within 7 business days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" style="height:36px;width:auto" /></a><p>Michigan's trusted web design agency helping small businesses grow online.</p></div><div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="services.html">Web Design</a></li><li><a href="seo.html">SEO Services</a></li><li><a href="custom-websites.html">Custom Websites</a></li><li><a href="monthly-plans.html">Monthly Plans</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul class="footer-links"><li><a href="mailto:majestywebdesign@gmail.com">majestywebdesign@gmail.com</a></li><li><a href="tel:+16169157546">(616) 915-7546</a></li><li style="margin-top:1rem"><a href="contact.html" class="btn btn-primary btn-sm">Get Free Quote</a></li></ul></div></div><div class="footer-bottom"><p class="footer-bottom-text">© 2026 Majesty Web Design. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div></div></footer>
+<script src="js/main.js" defer></script>
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" aria-hidden="true"></div>
+
+  <!-- Crisp Live Chat -->
+  <script type="text/javascript">
+    window.$crisp=[];
+    window.CRISP_WEBSITE_ID="b58f30dd-bcfd-433a-92f8-27cb779f84d4";
+    (function(){
+      var d=document,s=d.createElement("script");
+      s.src="https://client.crisp.chat/l.js";
+      s.async=1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
+
+</body>
+</html>

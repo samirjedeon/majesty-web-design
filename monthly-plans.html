@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monthly &amp; Annual Plans — Majesty Web Design | Website Plans Michigan</title>
+  <meta name="description" content="Monthly and annual website plans from $149/mo — hosting, edits, SEO, and support all included. Own your site after 12 months, or pay annually and own it from day one." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .plan-benefit { display: grid; grid-template-columns: 56px 1fr; gap: 1.25rem; align-items: start; padding: 1.75rem; background: var(--bg-card); border: 1px solid var(--bg-glass-border); border-radius: 1rem; transition: all var(--ease-base); }
+    .plan-benefit:hover { border-color: rgba(0,212,255,0.2); background: var(--bg-card-hover); }
+    .plan-benefit-icon { width: 56px; height: 56px; border-radius: 0.875rem; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.5rem; }
+    .plan-benefit h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.375rem; }
+    .plan-benefit p { font-size: 0.875rem; color: var(--gray-400); line-height: 1.65; }
+    .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .vs-table { background: var(--bg-card); border: 1px solid var(--bg-glass-border); border-radius: 1.5rem; overflow: hidden; }
+    .vs-header { display: grid; grid-template-columns: 1fr 1fr; }
+    .vs-col { padding: 1.5rem; text-align: center; }
+    .vs-col.theirs { border-right: 1px solid rgba(255,255,255,0.06); }
+    .vs-col.ours { background: rgba(0,212,255,0.04); }
+    .vs-col h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .vs-col .sub { font-size: 0.8125rem; color: var(--gray-500); }
+    .vs-row { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(255,255,255,0.06); }
+    .vs-cell { padding: 1rem 1.5rem; font-size: 0.875rem; }
+    .vs-cell.theirs { border-right: 1px solid rgba(255,255,255,0.06); color: var(--gray-400); }
+    .vs-cell.ours { color: var(--gray-200); background: rgba(0,212,255,0.02); }
+    .vs-bad { color: #EF4444; }
+    .vs-good { color: var(--cyan); font-weight: 600; }
+    @media (max-width: 768px) { .benefits-grid { grid-template-columns: 1fr; } .vs-cell, .vs-col { padding: 1rem; font-size: 0.8125rem; } }
+  </style>
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://www.majestywebdesign.com/monthly-plans.html" />
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.majestywebdesign.com/monthly-plans.html" />
+  <meta property="og:title" content="Monthly &amp; Annual Website Plans — Majesty Web Design | Michigan" />
+  <meta property="og:description" content="Monthly website management plans starting at $149/mo. Unlimited edits, hosting, security, SEO & dedicated support. No long-term contracts." />
+  <meta property="og:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <meta property="og:site_name" content="Majesty Web Design" />
+  <meta property="og:locale" content="en_US" />
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Monthly &amp; Annual Website Plans — Majesty Web Design | Michigan" />
+  <meta name="twitter:description" content="Monthly website management plans starting at $149/mo. Unlimited edits, hosting, security, SEO & dedicated support. No long-term contracts." />
+  <meta name="twitter:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <!-- SEO: Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://www.majestywebdesign.com/#business",
+    "name": "Majesty Web Design",
+    "description": "Michigan's premier web design agency helping small businesses grow online with affordable monthly website packages.",
+    "url": "https://www.majestywebdesign.com",
+    "logo": "https://www.majestywebdesign.com/images/logo.webp",
+    "image": "https://www.majestywebdesign.com/images/logo.webp",
+    "telephone": "+16169157546",
+    "email": "majestywebdesign@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
+    "areaServed":[{"@type":"State","name":"Michigan"},{"@type":"City","name":"Detroit","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Warren","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Sterling Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Troy","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Southfield","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Royal Oak","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Farmington Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Livonia","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Novi","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Ann Arbor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Macomb","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Pontiac","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Rochester Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Canton","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Dearborn","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Westland","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Taylor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Lansing","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Grand Rapids","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Flint","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Clinton Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Shelby Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Utica","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Madison Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Roseville","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Saint Clair Shores","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Chesterfield","containedInPlace":{"@type":"State","name":"Michigan"}}],
+    "priceRange": "$$",
+    "openingHoursSpecification": [{"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "18:00"}],
+    "sameAs":[],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"7","bestRating":"5","worstRating":"1"}
+  }
+  ]
+  </script>
+
+  <!-- SEO: BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.majestywebdesign.com/"},{"@type":"ListItem","position":2,"name":"Pricing","item":"https://www.majestywebdesign.com/pricing.html"},{"@type":"ListItem","position":3,"name":"Monthly &amp; Annual Plans","item":"https://www.majestywebdesign.com/monthly-plans.html"}]}
+  </script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRBPFDXPTJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VRBPFDXPTJ');
+  </script>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="services.html">Services <span class="drop-icon">▾</span></a><ul class="dropdown-menu"><li><a href="services.html">All Services</a></li><li><a href="seo.html">SEO Services</a></li><li><a href="custom-websites.html">Custom Websites</a></li><li><a href="industries.html">Industries We Serve</a></li></ul></li>
+      <li class="nav-dropdown"><a href="pricing.html" class="active">Pricing <span class="drop-icon">▾</span></a><ul class="dropdown-menu"><li><a href="pricing.html">Pricing Overview</a></li><li><a href="packages.html">Website Packages</a></li><li><a href="monthly-plans.html">Monthly Plans</a></li></ul></li>
+      <li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="blog.html">Resources</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions"><a href="tel:+16169157546" class="btn btn-outline btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 4.69 12 19.79 19.79 0 0 1 1.2 3.18 2 2 0 0 1 3.18 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.82 5.82l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16l-.36-.07"/></svg> Call Us</a><a href="contact.html" class="btn btn-primary btn-sm">Get Started</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="pricing.html">Pricing</a><a href="packages.html">Website Packages</a><a href="monthly-plans.html">Monthly Plans</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><div class="mobile-cta"><a href="contact.html" class="btn btn-primary w-full" style="justify-content:center">Get Your Free Quote</a></div></div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-bg"><div class="hero-orb hero-orb-1" style="opacity:0.25"></div><div class="hero-orb hero-orb-2" style="opacity:0.2"></div><div class="hero-grid"></div></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><a href="pricing.html">Pricing</a><span class="sep">›</span><span>Monthly &amp; Annual Plans</span></nav>
+      <div class="section-label" style="justify-content:center">Monthly &amp; Annual Plans</div>
+      <h1 class="section-title reveal" style="font-size:clamp(2.25rem,5vw,3.5rem);margin-bottom:1.25rem">Build, Launch, and<br /><span class="text-gradient">Own Your Website</span></h1>
+      <p class="section-subtitle mx-auto reveal delay-1">One flat rate covers the build, hosting, and support. Pay monthly and own your site after 12 months — or pay annually and own it from day one. Either way, you're always covered.</p>
+    </div>
+  </section>
+
+  <!-- WHY MONTHLY -->
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+        <div>
+          <div class="section-label reveal">The Majesty Advantage</div>
+          <h2 class="section-title reveal delay-1">Why Majesty Beats<br /><span class="text-gradient">Traditional Agencies</span></h2>
+          <p style="color:var(--gray-400);line-height:1.8;margin-bottom:1.5rem" class="reveal delay-2">Traditional agencies charge thousands upfront, build your site, and walk away. Six months later, your site is outdated, slow, and generating zero leads — and they're nowhere to be found.</p>
+          <p style="color:var(--gray-400);line-height:1.8;margin-bottom:2rem" class="reveal delay-3">Our monthly model means you're never stuck with a broken or outdated website. We're invested in your ongoing success because your renewal is our livelihood.</p>
+          <a href="contact.html" class="btn btn-primary reveal delay-4">Start My Plan</a>
+        </div>
+        <div class="vs-table reveal delay-2">
+          <div class="vs-header">
+            <div class="vs-col theirs"><h3 style="color:var(--gray-400)">Traditional Agency</h3><div class="sub">One-time build</div></div>
+            <div class="vs-col ours"><h3 class="text-gradient">Majesty Plans</h3><div class="sub">Monthly or annual</div></div>
+          </div>
+          <div class="vs-row"><div class="vs-cell theirs"><span class="vs-bad">$3,000–$10,000</span> upfront</div><div class="vs-cell ours"><span class="vs-good">$0</span> setup fee</div></div>
+          <div class="vs-row"><div class="vs-cell theirs"><span class="vs-bad">Extra charge</span> for every update</div><div class="vs-cell ours"><span class="vs-good">Unlimited</span> updates included</div></div>
+          <div class="vs-row"><div class="vs-cell theirs">Hosting <span class="vs-bad">sold separately</span></div><div class="vs-cell ours"><span class="vs-good">Hosting included</span></div></div>
+          <div class="vs-row"><div class="vs-cell theirs">SEO <span class="vs-bad">costs extra</span></div><div class="vs-cell ours"><span class="vs-good">SEO included</span></div></div>
+          <div class="vs-row"><div class="vs-cell theirs"><span class="vs-bad">Disappears</span> after launch</div><div class="vs-cell ours"><span class="vs-good">Always here</span> when you need us</div></div>
+          <div class="vs-row"><div class="vs-cell theirs">No annual discount</div><div class="vs-cell ours"><span class="vs-good">Save 20%</span> with annual billing</div></div>
+          <div class="vs-row"><div class="vs-cell theirs"><span class="vs-bad">Locked in</span> for 12+ months</div><div class="vs-cell ours"><span class="vs-good">Own your site</span> after 12 months</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="section-label reveal">Every Month, Without Fail</div>
+        <h2 class="section-title reveal delay-1">What's Included in<br /><span class="text-gradient">Every Plan</span></h2>
+      </div>
+      <div class="benefits-grid">
+        <div class="plan-benefit reveal delay-1"><div class="plan-benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><div><h3>Unlimited Content Updates</h3><p>Need to change hours, swap a photo, add a promo, or update your pricing? Just email us. We handle it fast.</p></div></div>
+        <div class="plan-benefit reveal delay-2"><div class="plan-benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div><h3>Secure Hosting Included</h3><p>No separate hosting bill. Your site lives on our enterprise infrastructure — fast, secure, and always up.</p></div></div>
+        <div class="plan-benefit reveal delay-3"><div class="plan-benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div><h3>SSL Certificate</h3><p>HTTPS encryption keeps your visitors' data safe and boosts your Google rankings. Renewed automatically every year.</p></div></div>
+        <div class="plan-benefit reveal delay-1"><div class="plan-benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><div><h3>Automated Backups</h3><p>Your site is backed up regularly. If anything ever goes wrong, we can restore it in minutes — not days.</p></div></div>
+        <div class="plan-benefit reveal delay-2"><div class="plan-benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h3>Security Monitoring</h3><p>We scan your site 24/7 for malware, hacking attempts, and vulnerabilities. Problems are caught before you notice them.</p></div></div>
+        <div class="plan-benefit reveal delay-3"><div class="plan-benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div><h3>Ongoing SEO (Growth+)</h3><p>We continuously optimize your site for search engines, track your rankings, and report your growth every month.</p></div></div>
+        <div class="plan-benefit reveal delay-1"><div class="plan-benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div><div><h3>Performance Reports (Growth+)</h3><p>Monthly reports showing your site traffic, search rankings, and lead stats in plain English — no confusing jargon.</p></div></div>
+        <div class="plan-benefit reveal delay-2"><div class="plan-benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><h3>Dedicated Support</h3><p>A real person who knows your site and your business. Not a ticket queue or a chatbot — actual human support.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-section reveal">
+        <div class="section-label" style="justify-content:center">Start today</div>
+        <h2 class="section-title">Your Website Should Be<br /><span class="text-gradient">Working For You</span></h2>
+        <p class="section-subtitle">Join 130+ Michigan businesses who've trusted Majesty to build, manage, and support their websites — monthly or annually, the choice is yours.</p>
+        <div class="cta-actions mt-8">
+          <a href="contact.html" class="btn btn-primary btn-lg">Get My Plan</a>
+          <a href="pricing.html" class="btn btn-outline btn-lg">Compare All Plans</a>
+          <a href="index.html#free-preview" class="btn btn-outline btn-lg" style="border-color:rgba(0,212,255,0.4);color:var(--cyan)">See a Free Preview First</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" style="height:36px;width:auto" /></a><p>Michigan's trusted web design agency helping small businesses grow online.</p></div><div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="services.html">Web Design</a></li><li><a href="seo.html">SEO Services</a></li><li><a href="custom-websites.html">Custom Websites</a></li><li><a href="monthly-plans.html">Monthly Plans</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul class="footer-links"><li><a href="mailto:majestywebdesign@gmail.com">majestywebdesign@gmail.com</a></li><li><a href="tel:+16169157546">(616) 915-7546</a></li><li style="margin-top:1rem"><a href="contact.html" class="btn btn-primary btn-sm">Get Free Quote</a></li></ul></div></div><div class="footer-bottom"><p class="footer-bottom-text">© 2026 Majesty Web Design. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div></div></footer>
+<script src="js/main.js" defer></script>
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" aria-hidden="true"></div>
+
+  <!-- Crisp Live Chat -->
+  <script type="text/javascript">
+    window.$crisp=[];
+    window.CRISP_WEBSITE_ID="b58f30dd-bcfd-433a-92f8-27cb779f84d4";
+    (function(){
+      var d=document,s=d.createElement("script");
+      s.src="https://client.crisp.chat/l.js";
+      s.async=1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
+
+</body>
+</html>

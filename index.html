@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Majesty Web Design — Michigan's Premier Web Design Agency</title>
+  <meta name="description" content="Affordable monthly and annual website packages for small businesses in Michigan. Starting at $149/mo — or save 20% with annual billing and own your site from day one." />
+  <meta name="keywords" content="web design Michigan, affordable website packages, small business websites, monthly web design, annual web design, lease to own website, SEO Michigan" />
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRBPFDXPTJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VRBPFDXPTJ');
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Homepage-specific styles */
+    .hero { min-height: 100vh; }
+    #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+
+    /* Hero Visual */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .browser-mockup {
+      width: 100%;
+      max-width: 580px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 60px rgba(0,212,255,0.12);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .browser-bar {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .browser-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .browser-dot:nth-child(1) { background: #FF5F57; }
+    .browser-dot:nth-child(2) { background: #FEBC2E; }
+    .browser-dot:nth-child(3) { background: #28C840; }
+
+    .browser-url {
+      flex: 1;
+      background: rgba(255,255,255,0.06);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin: 0 8px;
+    }
+
+    .browser-screen {
+      height: 320px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.06) 0%, rgba(139,92,246,0.06) 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 24px;
+    }
+
+    .mock-nav {
+      height: 36px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 8px;
+    }
+
+    .mock-hero {
+      flex: 1;
+      background: rgba(0,212,255,0.08);
+      border-radius: 10px;
+      border: 1px solid rgba(0,212,255,0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .mock-line {
+      height: 10px;
+      border-radius: 5px;
+      background: rgba(255,255,255,0.12);
+    }
+
+    .mock-line-lg { width: 75%; height: 14px; }
+    .mock-line-md { width: 55%; }
+    .mock-line-sm { width: 35%; }
+
+    .mock-btn {
+      height: 32px;
+      width: 120px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.5), rgba(139,92,246,0.5));
+      margin-top: 4px;
+    }
+
+    .mock-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .mock-card {
+      height: 60px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Floating accent elements */
+    .float-badge {
+      position: absolute;
+      background: rgba(8, 8, 16, 0.9);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      z-index: 2;
+    }
+
+    .float-badge-1 {
+      top: 15%;
+      left: -10%;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .float-badge-2 {
+      bottom: 20%;
+      right: -8%;
+      animation: float 7s ease-in-out infinite reverse;
+    }
+
+    .badge-inner {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: rgba(0,212,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .badge-text { color: var(--white); line-height: 1.3; }
+    .badge-sub { font-size: 0.7rem; color: var(--gray-400); font-weight: 400; }
+
+    /* Hero two-column layout */
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    /* Testimonials slider */
+    .testimonial-slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .testimonial-slide {
+      flex: 0 0 100%;
+      padding: 0 var(--space-4);
+    }
+
+    .testimonial-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+    }
+
+    .slider-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-glass-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-400);
+      cursor: pointer;
+      transition: all var(--ease-fast);
+    }
+
+    .slider-btn:hover {
+      background: rgba(0,212,255,0.1);
+      border-color: rgba(0,212,255,0.3);
+      color: var(--cyan);
+    }
+
+    .slider-btn svg { width: 18px; height: 18px; }
+
+    .testimonial-dots { display: flex; gap: 6px; }
+
+    .slider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      cursor: pointer;
+      transition: all var(--ease-fast);
+    }
+
+    .slider-dot.active {
+      background: var(--cyan);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* Process connector line override */
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+      .hero-visual { display: none; }
+      .float-badge { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .mock-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Why-us & free-preview section layouts — defined here so they work
+       even when styles.css is cached from an older version */
+    .two-col-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .two-col-section > * { min-width: 0; }
+    .stat-mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .feature-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 768px) {
+      .two-col-section { grid-template-columns: 1fr; gap: 2rem; }
+      .preview-card { padding: 1.75rem !important; border-radius: 1.25rem !important; }
+      .preview-form-card { padding: 1.25rem !important; }
+    }
+
+    /* ── Premium features (cache-proof copies) ── */
+
+    /* Reading progress bar */
+    #reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: linear-gradient(90deg, #8b5cf6, #00d4ff);
+      z-index: 10000; border-radius: 0 2px 2px 0; pointer-events: none;
+      transition: width 0.08s linear;
+    }
+
+    /* Typewriter cursor */
+    #typed-industry { display: inline-block; }
+    #typed-industry::after {
+      content: '|'; color: #00d4ff;
+      animation: blink-cursor 0.75s step-end infinite; margin-left: 1px;
+    }
+    @keyframes blink-cursor { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* Floating CTA strip */
+    #floating-cta {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 998;
+      background: linear-gradient(90deg,#7c3aed,#4f46e5,#0ea5e9);
+      padding: 0.8125rem 1.5rem;
+      display: flex; align-items: center; justify-content: center; gap: 1.25rem;
+      transform: translateY(100%);
+      transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+      box-shadow: 0 -4px 30px rgba(124,58,237,0.45);
+    }
+    #floating-cta.visible { transform: translateY(0); }
+    .floating-cta-text { color: white; font-size: 0.9375rem; font-weight: 500; }
+    .floating-cta-text strong { font-weight: 700; }
+    .floating-cta-btn {
+      background: white; color: #7c3aed; font-weight: 700; font-size: 0.875rem;
+      padding: 0.5rem 1.25rem; border-radius: 9999px;
+      text-decoration: none; white-space: nowrap; flex-shrink: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .floating-cta-btn:hover { transform: scale(1.04); box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
+    .floating-cta-close {
+      background: none; border: none; color: rgba(255,255,255,0.75);
+      cursor: pointer; font-size: 1.25rem; line-height: 1; padding: 0.25rem 0.5rem;
+      flex-shrink: 0; border-radius: 6px; transition: color 0.2s ease;
+    }
+    .floating-cta-close:hover { color: white; }
+    @media (max-width: 600px) {
+      #floating-cta { gap: 0.75rem; padding: 0.625rem 1rem; flex-wrap: wrap; }
+      .floating-cta-text { font-size: 0.8125rem; }
+    }
+
+    /* Exit-intent popup */
+    #exit-popup {
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; align-items: center; justify-content: center; padding: 1rem;
+      background: rgba(0,0,0,0.72); backdrop-filter: blur(8px);
+      opacity: 0; pointer-events: none; transition: opacity 0.35s ease;
+    }
+    #exit-popup.active { opacity: 1; pointer-events: all; }
+    .exit-popup-card {
+      background: #13131f; border: 1px solid rgba(139,92,246,0.35);
+      border-radius: 1.5rem; padding: 2.5rem; max-width: 480px; width: 100%;
+      position: relative; box-shadow: 0 24px 80px rgba(0,0,0,0.55);
+      transform: scale(0.9) translateY(20px);
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+    }
+    #exit-popup.active .exit-popup-card { transform: scale(1) translateY(0); }
+    .exit-popup-close {
+      position: absolute; top: 1rem; right: 1rem; background: none; border: none;
+      color: #9ca3af; font-size: 1.5rem; cursor: pointer; line-height: 1;
+      padding: 0.25rem 0.5rem; border-radius: 6px; transition: color 0.15s;
+    }
+    .exit-popup-close:hover { color: white; background: rgba(255,255,255,0.08); }
+    .exit-popup-emoji { font-size: 2.5rem; margin-bottom: 0.75rem; line-height: 1; }
+    .exit-popup-title {
+      font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;
+      background: linear-gradient(135deg,#00d4ff,#8b5cf6);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .exit-popup-sub { color: #d1d5db; margin-bottom: 1.5rem; font-size: 0.9375rem; line-height: 1.6; }
+    .exit-popup-form { display: flex; flex-direction: column; gap: 0.75rem; }
+    .exit-popup-form input {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 0.75rem; padding: 0.75rem 1rem; color: white;
+      font-size: 0.9375rem; font-family: inherit; outline: none; width: 100%;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .exit-popup-form input::placeholder { color: #6b7280; }
+    .exit-popup-form input:focus { border-color: #8b5cf6; box-shadow: 0 0 0 3px rgba(139,92,246,0.15); }
+    .exit-popup-disclaimer { font-size: 0.75rem; color: #6b7280; text-align: center; margin-top: 0.5rem; }
+  </style>
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://www.majestywebdesign.com/" />
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.majestywebdesign.com/" />
+  <meta property="og:title" content="Majesty Web Design — Michigan's Premier Web Design Agency" />
+  <meta property="og:description" content="Affordable monthly website packages for Michigan small businesses. Professional web design, SEO & support starting at $149/mo. No setup fees, no contracts." />
+  <meta property="og:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <meta property="og:site_name" content="Majesty Web Design" />
+  <meta property="og:locale" content="en_US" />
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Majesty Web Design — Michigan's Premier Web Design Agency" />
+  <meta name="twitter:description" content="Affordable monthly website packages for Michigan small businesses. Professional web design, SEO & support starting at $149/mo. No setup fees, no contracts." />
+  <meta name="twitter:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <!-- SEO: Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://www.majestywebdesign.com/#business",
+    "name": "Majesty Web Design",
+    "description": "Michigan's premier web design agency helping small businesses grow online with affordable monthly website packages.",
+    "url": "https://www.majestywebdesign.com",
+    "logo": "https://www.majestywebdesign.com/images/logo.webp",
+    "image": "https://www.majestywebdesign.com/images/logo.webp",
+    "telephone": "+16169157546",
+    "email": "majestywebdesign@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
+    "areaServed":[{"@type":"State","name":"Michigan"},{"@type":"City","name":"Detroit","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Warren","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Sterling Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Troy","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Southfield","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Royal Oak","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Farmington Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Livonia","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Novi","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Ann Arbor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Macomb","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Pontiac","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Rochester Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Canton","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Dearborn","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Westland","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Taylor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Lansing","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Grand Rapids","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Flint","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Clinton Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Shelby Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Utica","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Madison Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Roseville","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Saint Clair Shores","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Chesterfield","containedInPlace":{"@type":"State","name":"Michigan"}}],
+    "priceRange": "$$",
+    "openingHoursSpecification": [{"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "18:00"}],
+    "sameAs":[],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"7","bestRating":"5","worstRating":"1"}
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Majesty Web Design",
+    "url": "https://www.majestywebdesign.com"
+  }
+  ]
+  </script>
+
+  <!-- SEO: SitelinksSearchBox -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","url":"https://www.majestywebdesign.com/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.majestywebdesign.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}}
+  </script>
+</head>
+<body>
+
+  <!-- ================================================
+       NAVIGATION
+       ================================================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" /></a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html">Services <span class="drop-icon">▾</span></a>
+          <ul class="dropdown-menu" role="list">
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="seo.html">SEO Services</a></li>
+            <li><a href="custom-websites.html">Custom Websites</a></li>
+            <li><a href="industries.html">Industries We Serve</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <a href="pricing.html">Pricing <span class="drop-icon">▾</span></a>
+          <ul class="dropdown-menu" role="list">
+            <li><a href="pricing.html">Pricing Overview</a></li>
+            <li><a href="packages.html">Website Packages</a></li>
+            <li><a href="monthly-plans.html">Monthly Plans</a></li>
+          </ul>
+        </li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="tel:+16169157546" class="btn btn-outline btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 4.69 12 19.79 19.79 0 0 1 1.2 3.18 2 2 0 0 1 3.18 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.82 5.82l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16l-.36-.07"/></svg> Call Us</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+      <div class="mobile-menu-section">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="portfolio.html">Portfolio</a>
+      </div>
+      <div class="mobile-menu-section">
+        <div class="mobile-menu-label">Services</div>
+        <a href="services.html">All Services</a>
+        <a href="seo.html">SEO Services</a>
+        <a href="custom-websites.html">Custom Websites</a>
+        <a href="industries.html">Industries We Serve</a>
+      </div>
+      <div class="mobile-menu-section">
+        <div class="mobile-menu-label">Pricing</div>
+        <a href="pricing.html">Pricing Overview</a>
+        <a href="packages.html">Website Packages</a>
+        <a href="monthly-plans.html">Monthly Plans</a>
+      </div>
+      <div class="mobile-menu-section">
+        <a href="blog.html">Resources &amp; Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="mobile-cta">
+        <a href="contact.html" class="btn btn-primary w-full" style="justify-content:center;">Get Your Free Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ================================================
+         HERO SECTION
+         ================================================ -->
+    <section class="hero section" aria-labelledby="hero-heading">
+      <div class="hero-bg">
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero-grid"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-inner">
+          <!-- Left: Content -->
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              Michigan's Premier Web Design Agency
+            </div>
+
+            <h1 class="hero-title text-display" id="hero-heading">
+              Websites That Win<br />
+              <span class="text-gradient">More Clients</span><br />
+              For <span id="typed-industry">Your Business</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              We design and manage stunning, high-converting websites for small businesses — starting at $149/mo with hosting included, unlimited edits, and zero upfront costs. Not sure yet? We'll build your homepage free so you can see it first.
+            </p>
+
+            <div class="hero-actions">
+              <a href="contact.html" class="btn btn-primary btn-lg">
+                Start My Website
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="portfolio.html" class="btn btn-outline btn-lg">View Our Work</a>
+            </div>
+
+            <div class="hero-social-proof">
+              <div class="hero-avatars">
+                <div class="hero-avatar">MR</div>
+                <div class="hero-avatar">SK</div>
+                <div class="hero-avatar">JP</div>
+                <div class="hero-avatar">LW</div>
+              </div>
+              <p class="hero-proof-text"><strong>Michigan businesses</strong> growing online with Majesty</p>
+            </div>
+          </div>
+
+          <!-- Right: Visual -->
+          <div class="hero-visual">
+            <div class="float-badge float-badge-1">
+              <div class="badge-inner">
+                <div class="badge-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                <div class="badge-text">
+                  Website Live in 7 Days
+                  <div class="badge-sub">Average delivery time</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="browser-mockup">
+              <div class="browser-bar">
+                <div class="browser-dot"></div>
+                <div class="browser-dot"></div>
+                <div class="browser-dot"></div>
+                <div class="browser-url">majestywebdesign.com</div>
+              </div>
+              <div class="browser-screen">
+                <div class="mock-nav"></div>
+                <div class="mock-hero">
+                  <div class="mock-line mock-line-lg"></div>
+                  <div class="mock-line mock-line-md"></div>
+                  <div class="mock-line mock-line-sm"></div>
+                  <div class="mock-btn"></div>
+                </div>
+                <div class="mock-cards">
+                  <div class="mock-card"></div>
+                  <div class="mock-card"></div>
+                  <div class="mock-card"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="float-badge float-badge-2">
+              <div class="badge-inner">
+                <div class="badge-icon" style="background:rgba(139,92,246,0.15)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+                <div class="badge-text">
+                  3× More Leads
+                  <div class="badge-sub">Average client growth</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         STATS BAR
+         ================================================ -->
+    <section class="stats-section" aria-label="Company statistics">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item reveal">
+            <div class="stat-number" data-counter data-prefix="$" data-target="149" data-suffix="/mo">$149/mo</div>
+            <div class="stat-label">Starting Price</div>
+          </div>
+          <div class="stat-item reveal delay-1">
+            <div class="stat-number" data-counter data-prefix="$" data-target="0">$0</div>
+            <div class="stat-label">Setup Fee — Ever</div>
+          </div>
+          <div class="stat-item reveal delay-2">
+            <div class="stat-number" data-counter data-target="7" data-suffix=" Days">7 Days</div>
+            <div class="stat-label">Average Launch Time</div>
+          </div>
+          <div class="stat-item reveal delay-3">
+            <div class="stat-number">Free</div>
+            <div class="stat-label">Homepage Preview First</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         SERVICES SECTION
+         ================================================ -->
+    <section class="section" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="text-center mb-12">
+          <div class="section-label reveal">What We Do</div>
+          <h2 class="section-title reveal delay-1" id="services-heading">
+            Everything Your Business Needs<br />
+            <span class="text-gradient">Under One Roof</span>
+          </h2>
+          <p class="section-subtitle mx-auto reveal delay-2">
+            From building your site to ranking it on Google, we handle the digital side of your business so you can focus on what you do best.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1 -->
+          <div class="service-card reveal delay-1">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h3>Professional Web Design</h3>
+            <p>Custom-designed websites built to convert visitors into paying customers. Every site is unique to your brand.</p>
+            <a href="services.html" class="service-link">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card reveal delay-2">
+            <div class="service-icon" style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.25)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M8 11h6M11 8v6"/></svg>
+            </div>
+            <h3>Search Engine Optimization</h3>
+            <p>Get found on Google when customers search for your services. We handle all on-page and local SEO.</p>
+            <a href="seo.html" class="service-link">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card reveal delay-3">
+            <div class="service-icon" style="background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.25)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <h3>Unlimited Website Edits</h3>
+            <p>Need to update hours, add a promotion, or swap photos? We make changes for you — fast, no extra charges.</p>
+            <a href="monthly-plans.html" class="service-link">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="service-card reveal delay-1">
+            <div class="service-icon" style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.25)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            </div>
+            <h3>Mobile Optimization</h3>
+            <p>Over 60% of traffic is mobile. We ensure your website looks perfect and loads fast on every device.</p>
+            <a href="services.html" class="service-link">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="service-card reveal delay-2">
+            <div class="service-icon" style="background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.25)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+            </div>
+            <h3>Hosting &amp; Maintenance</h3>
+            <p>Secure hosting, SSL certificates, backups, and security monitoring — all included in every monthly plan.</p>
+            <a href="packages.html" class="service-link">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="service-card reveal delay-3">
+            <div class="service-icon" style="background:rgba(236,72,153,0.1);border-color:rgba(236,72,153,0.25)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F472B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>Conversion Optimization</h3>
+            <p>Strategic layouts, compelling CTAs, and proven design patterns that turn website visitors into leads.</p>
+            <a href="services.html" class="service-link">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="text-center mt-12 reveal">
+          <a href="services.html" class="btn btn-outline btn-lg">View All Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         WHY CHOOSE US
+         ================================================ -->
+    <section class="section section-alt" id="why-us" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="two-col-section">
+          <!-- Left -->
+          <div>
+            <div class="section-label reveal">Why Majesty</div>
+            <h2 class="section-title reveal delay-1" id="why-heading">
+              Built Different.<br />
+              <span class="text-gradient">Priced for Small Business.</span>
+            </h2>
+            <p class="section-subtitle reveal delay-2">
+              We're not another expensive agency that charges $5,000 upfront and disappears. We're your long-term digital partner — affordable, reliable, and invested in your success.
+            </p>
+
+            <div class="mt-8 reveal delay-3">
+              <a href="about.html" class="btn btn-primary">Our Story</a>
+            </div>
+
+            <div class="stat-mini-grid">
+              <div class="card-glass" style="padding:1.25rem;border-radius:0.75rem;border:1px solid rgba(255,255,255,0.06)">
+                <div style="font-size:1.75rem;font-weight:800;background:var(--gradient-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">$0</div>
+                <div style="font-size:0.875rem;color:var(--gray-400);margin-top:0.25rem">Upfront cost</div>
+              </div>
+              <div class="card-glass" style="padding:1.25rem;border-radius:0.75rem;border:1px solid rgba(255,255,255,0.06)">
+                <div style="font-size:1.75rem;font-weight:800;background:var(--gradient-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">7 Days</div>
+                <div style="font-size:0.875rem;color:var(--gray-400);margin-top:0.25rem">To launch</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Feature grid -->
+          <div class="feature-cards-grid">
+            <div class="feature-item reveal delay-1">
+              <div class="feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <h3>Premium Quality</h3>
+              <p>Agency-quality design without the agency price tag.</p>
+            </div>
+
+            <div class="feature-item reveal delay-2">
+              <div class="feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              </div>
+              <h3>Unlimited Edits</h3>
+              <p>Request changes anytime. We respond within 24 hours.</p>
+            </div>
+
+            <div class="feature-item reveal delay-3">
+              <div class="feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3>Hosting Included</h3>
+              <p>Secure hosting, SSL, and backups covered every month.</p>
+            </div>
+
+            <div class="feature-item reveal delay-4">
+              <div class="feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <h3>SEO Built In</h3>
+              <p>Every site is optimized for Google from day one.</p>
+            </div>
+
+            <div class="feature-item reveal delay-5">
+              <div class="feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.82 5.82l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16l-.36-.07"/></svg>
+              </div>
+              <h3>Dedicated Support</h3>
+              <p>Real people, not bots. We're here when you need us.</p>
+            </div>
+
+            <div class="feature-item reveal delay-6">
+              <div class="feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+              </div>
+              <h3>Michigan-Based</h3>
+              <p>Local team that understands local businesses and markets.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================
+         FREE HOMEPAGE PREVIEW SECTION
+         ================================================ -->
+    <section class="section section-alt" id="free-preview" aria-labelledby="preview-heading">
+      <div class="container">
+        <div class="preview-card" style="position:relative;background:linear-gradient(135deg,rgba(0,212,255,0.05) 0%,rgba(139,92,246,0.05) 100%);border:1.5px solid rgba(0,212,255,0.22);border-radius:2rem;padding:4rem;overflow:hidden">
+          <div style="position:absolute;top:-80px;right:-80px;width:340px;height:340px;background:radial-gradient(circle,rgba(0,212,255,0.1),transparent 68%);border-radius:50%;pointer-events:none"></div>
+          <div style="position:absolute;bottom:-80px;left:-80px;width:280px;height:280px;background:radial-gradient(circle,rgba(139,92,246,0.1),transparent 68%);border-radius:50%;pointer-events:none"></div>
+
+          <div class="two-col-section" style="position:relative;z-index:1">
+
+            <!-- Left: Copy -->
+            <div>
+              <div class="section-label reveal" style="color:var(--cyan)">Zero Risk · Zero Commitment</div>
+              <h2 class="section-title reveal delay-1" id="preview-heading">
+                See Your Website<br />
+                <span class="text-gradient">Before You Spend a Dime</span>
+              </h2>
+              <p style="color:var(--gray-400);line-height:1.8;margin-bottom:1.75rem;font-size:1.0625rem" class="reveal delay-2">
+                We'll design and build your homepage — completely free, no strings attached. Just tell us a few things about your business and we'll show you exactly what your site could look like before you ever make a decision.
+              </p>
+              <ul style="list-style:none;padding:0;margin:0 0 2.5rem" class="reveal delay-3">
+                <li style="display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.875rem;color:var(--gray-200);font-size:0.9375rem">
+                  <span style="width:22px;height:22px;border-radius:50%;background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.25);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:0.7rem;flex-shrink:0;margin-top:1px">✓</span>
+                  Custom-designed homepage built specifically for your business
+                </li>
+                <li style="display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.875rem;color:var(--gray-200);font-size:0.9375rem">
+                  <span style="width:22px;height:22px;border-radius:50%;background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.25);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:0.7rem;flex-shrink:0;margin-top:1px">✓</span>
+                  No credit card, no contract, no obligation — ever
+                </li>
+                <li style="display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.875rem;color:var(--gray-200);font-size:0.9375rem">
+                  <span style="width:22px;height:22px;border-radius:50%;background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.25);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:0.7rem;flex-shrink:0;margin-top:1px">✓</span>
+                  Ready in 3–5 business days
+                </li>
+                <li style="display:flex;align-items:flex-start;gap:0.75rem;color:var(--gray-200);font-size:0.9375rem">
+                  <span style="width:22px;height:22px;border-radius:50%;background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.25);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:0.7rem;flex-shrink:0;margin-top:1px">✓</span>
+                  If you love it, we move forward — if not, no hard feelings
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="card-glass preview-form-card reveal delay-2" style="padding:2.25rem;border-radius:1.5rem;border:1px solid rgba(255,255,255,0.08)">
+              <div style="font-size:1.125rem;font-weight:700;margin-bottom:0.375rem;color:var(--white)">Get Your Free Homepage</div>
+              <div style="font-size:0.875rem;color:var(--gray-400);margin-bottom:1.75rem">Takes 60 seconds. We do the rest.</div>
+              <form id="preview-form">
+                <!-- Honeypot spam protection — must stay hidden -->
+                <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+                <div style="display:flex;flex-direction:column;gap:1rem">
+                  <div>
+                    <label style="display:block;font-size:0.8125rem;font-weight:600;color:var(--gray-300);margin-bottom:0.4rem">Business Name</label>
+                    <input type="text" name="business" placeholder="e.g. Mike's Auto Repair" required style="width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.625rem;color:var(--white);font-size:0.9375rem;outline:none;box-sizing:border-box" />
+                  </div>
+                  <div>
+                    <label style="display:block;font-size:0.8125rem;font-weight:600;color:var(--gray-300);margin-bottom:0.4rem">Industry / Business Type</label>
+                    <input type="text" name="industry" placeholder="e.g. Contractor, Salon, Dentist…" required style="width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.625rem;color:var(--white);font-size:0.9375rem;outline:none;box-sizing:border-box" />
+                  </div>
+                  <div>
+                    <label style="display:block;font-size:0.8125rem;font-weight:600;color:var(--gray-300);margin-bottom:0.4rem">Your Name</label>
+                    <input type="text" name="name" placeholder="First name is fine" required style="width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.625rem;color:var(--white);font-size:0.9375rem;outline:none;box-sizing:border-box" />
+                  </div>
+                  <div>
+                    <label style="display:block;font-size:0.8125rem;font-weight:600;color:var(--gray-300);margin-bottom:0.4rem">Phone or Email</label>
+                    <input type="text" name="contact" placeholder="Best way to reach you" required style="width:100%;padding:0.75rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.625rem;color:var(--white);font-size:0.9375rem;outline:none;box-sizing:border-box" />
+                  </div>
+                  <button type="submit" class="btn btn-primary w-full" style="justify-content:center;margin-top:0.25rem;font-size:1rem">Request My Free Homepage</button>
+                </div>
+              </form>
+              <p style="text-align:center;font-size:0.75rem;color:var(--gray-500);margin-top:1rem;line-height:1.5">We'll reach out within 24 hours to get started.<br />Your info is never shared or sold.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================
+         PRICING SECTION
+         ================================================ -->
+    <section class="section section-alt" id="pricing" aria-labelledby="pricing-heading">
+      <div class="container">
+        <div class="text-center mb-12">
+          <div class="section-label reveal">Transparent Pricing</div>
+          <h2 class="section-title reveal delay-1" id="pricing-heading">
+            Simple, Affordable<br />
+            <span class="text-gradient">Monthly &amp; Annual Plans</span>
+          </h2>
+          <p class="section-subtitle mx-auto reveal delay-2">
+            No setup fees. No hidden costs. Pay monthly from $149, or save 20% with annual billing — and own your website after 12 months.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Starter -->
+          <div class="pricing-card reveal delay-1">
+            <div class="pricing-plan-name">Starter</div>
+            <div class="pricing-price">
+              <span class="pricing-currency">$</span>
+              <span class="pricing-amount">149</span>
+              <span class="pricing-period">/mo</span>
+            </div>
+            <p class="pricing-desc">Perfect for local businesses getting their first professional website online.</p>
+            <div class="pricing-divider"></div>
+            <ul class="pricing-features">
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                5-Page Custom Website
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Hosting &amp; SSL Included
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Mobile Responsive Design
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                2 Content Updates/Month
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Basic SEO Setup
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Email Support
+              </li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline w-full" style="justify-content:center">Get Started</a>
+          </div>
+
+          <!-- Growth (Featured) -->
+          <div class="pricing-card featured reveal delay-2">
+            <div class="pricing-badge">Most Popular</div>
+            <div class="pricing-plan-name">Growth</div>
+            <div class="pricing-price">
+              <span class="pricing-currency">$</span>
+              <span class="pricing-amount text-gradient">199</span>
+              <span class="pricing-period">/mo</span>
+            </div>
+            <p class="pricing-desc">The complete solution for businesses ready to grow their online presence fast.</p>
+            <div class="pricing-divider"></div>
+            <ul class="pricing-features">
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon" style="background:rgba(139,92,246,0.15)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                10-Page Custom Website
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon" style="background:rgba(139,92,246,0.15)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Everything in Starter
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon" style="background:rgba(139,92,246,0.15)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Unlimited Content Updates
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon" style="background:rgba(139,92,246,0.15)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Full SEO Optimization
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon" style="background:rgba(139,92,246,0.15)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Monthly Performance Report
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon" style="background:rgba(139,92,246,0.15)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Priority Support (24hr)
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon" style="background:rgba(139,92,246,0.15)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Google Business Optimization
+              </li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary w-full" style="justify-content:center">Get Started</a>
+          </div>
+
+          <!-- Elite -->
+          <div class="pricing-card reveal delay-3">
+            <div class="pricing-plan-name">Elite</div>
+            <div class="pricing-price">
+              <span class="pricing-currency">$</span>
+              <span class="pricing-amount">249</span>
+              <span class="pricing-period">/mo</span>
+            </div>
+            <p class="pricing-desc">Enterprise-level results for businesses that need maximum online impact.</p>
+            <div class="pricing-divider"></div>
+            <ul class="pricing-features">
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Unlimited Pages
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Everything in Growth
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                E-Commerce Ready
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Advanced Local SEO
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Dedicated Account Manager
+              </li>
+              <li class="pricing-feature">
+                <span class="pricing-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Same-Day Updates
+              </li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline w-full" style="justify-content:center">Get Started</a>
+          </div>
+        </div>
+
+        <p class="text-center text-sm text-gray mt-8 reveal">
+          All plans include a free consultation. No setup fees. No contracts. Cancel anytime.
+          <a href="pricing.html" class="text-cyan" style="margin-left:0.5rem">Compare all features →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ================================================
+         PROCESS SECTION
+         ================================================ -->
+    <section class="section" id="process" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="text-center mb-12">
+          <div class="section-label reveal">How It Works</div>
+          <h2 class="section-title reveal delay-1" id="process-heading">
+            Your Website, Live in<br />
+            <span class="text-gradient">4 Simple Steps</span>
+          </h2>
+          <p class="section-subtitle mx-auto reveal delay-2">
+            Our streamlined process means your site gets built fast, without the usual back-and-forth delays.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step reveal delay-1">
+            <div class="process-step-number">01</div>
+            <h3>Discovery Call</h3>
+            <p>We learn about your business, goals, and audience to craft the perfect strategy and design direction.</p>
+          </div>
+          <div class="process-step reveal delay-2">
+            <div class="process-step-number">02</div>
+            <h3>Design &amp; Build</h3>
+            <p>Our team designs and develops your custom website with your brand, content, and conversion goals in mind.</p>
+          </div>
+          <div class="process-step reveal delay-3">
+            <div class="process-step-number">03</div>
+            <h3>Review &amp; Launch</h3>
+            <p>You review the site, request any tweaks, and once approved we go live — typically within 7 business days.</p>
+          </div>
+          <div class="process-step reveal delay-4">
+            <div class="process-step-number">04</div>
+            <h3>Ongoing Support</h3>
+            <p>We monitor, update, and optimize your site every month so you're always ahead of the competition.</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-12 reveal">
+          <a href="contact.html" class="btn btn-primary btn-lg">Start the Process</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         TESTIMONIALS
+         ================================================ -->
+    <section class="section section-alt" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="text-center mb-12">
+          <div class="section-label reveal">Client Love</div>
+          <h2 class="section-title reveal delay-1" id="testimonials-heading">
+            Real Businesses,<br />
+            <span class="text-gradient">Real Results</span>
+          </h2>
+        </div>
+
+        <div class="testimonial-slider reveal" style="max-width:900px;margin:0 auto">
+          <div class="testimonial-track">
+            <!-- Shadi Alalam - Google Review -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card" style="max-width:700px;margin:0 auto">
+                <div class="testimonial-stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="testimonial-text">"Absolutely thrilled with the work Majesty Web Design did for my Budget Flooring website! From start to finish, Samir was a pleasure to work with — professional, responsive, and delivered exactly what I envisioned."</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" style="background:linear-gradient(135deg,#6366F1,#8B5CF6)">SA</div>
+                  <div>
+                    <div class="testimonial-name">Shadi Alalam</div>
+                    <div class="testimonial-role">Owner — Budget Flooring Center</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ziad Tamimi - Google Review -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card" style="max-width:700px;margin:0 auto">
+                <div class="testimonial-stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="testimonial-text">"I had the pleasure of working with Samir on my mortgage website. He was so easy to talk to, his workflow was very timely, and the final product exceeded my expectations. Highly recommend Majesty Web Design."</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" style="background:linear-gradient(135deg,#0D9488,#16A34A)">ZT</div>
+                  <div>
+                    <div class="testimonial-name">Ziad Tamimi</div>
+                    <div class="testimonial-role">Owner — Mod Mortgage Loans</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kavita Prasad - Google Review -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card" style="max-width:700px;margin:0 auto">
+                <div class="testimonial-stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="testimonial-text">"Samir was very helpful and knowledgeable about website design. He knew how to turn my vision into a reality. Highly recommend."</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" style="background:linear-gradient(135deg,#7C3AED,#EC4899)">KP</div>
+                  <div>
+                    <div class="testimonial-name">Kavita Prasad</div>
+                    <div class="testimonial-role">Verified Google Review</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sean Phillipo - Google Review -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card" style="max-width:700px;margin:0 auto">
+                <div class="testimonial-stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="testimonial-text">"Highly recommend!! Great knowledge of what to do and easy to work with. Price was very reasonable!"</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" style="background:linear-gradient(135deg,#F97316,#EF4444)">SP</div>
+                  <div>
+                    <div class="testimonial-name">Sean Phillipo</div>
+                    <div class="testimonial-role">Verified Google Review</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-controls">
+            <button class="slider-btn slider-prev" aria-label="Previous testimonial">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            </button>
+            <div class="testimonial-dots"></div>
+            <button class="slider-btn slider-next" aria-label="Next testimonial">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         FINAL CTA
+         ================================================ -->
+    <section class="section" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-section reveal">
+          <div class="section-label" style="justify-content:center">Ready to grow?</div>
+          <h2 class="section-title" id="cta-heading">
+            Let's Build Something<br />
+            <span class="text-gradient">That Actually Works</span>
+          </h2>
+          <p class="section-subtitle">
+            Michigan small businesses trust Majesty Web Design to build, manage, and grow their online presence. Get started today — no upfront costs, no risk.
+          </p>
+          <div class="cta-actions mt-8">
+            <a href="contact.html" class="btn btn-primary btn-lg">Get My Free Quote</a>
+            <a href="tel:+16169157546" class="btn btn-outline btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 4.69 12 19.79 19.79 0 0 1 1.2 3.18 2 2 0 0 1 3.18 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.82 5.82l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16l-.36-.07"/></svg> Call Now</a>
+          </div>
+          <p class="text-sm text-gray mt-6">Free consultation · No commitment · Response within 24 hours</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================
+       FOOTER
+       ================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a href="index.html"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" style="height:36px;width:auto" /></a>
+          <p>Michigan's trusted web design agency helping small businesses grow with affordable monthly website packages, SEO, and ongoing support.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/people/Majesty-Web-Design/100092121666116/" class="footer-social" aria-label="Facebook" rel="noopener noreferrer" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/majestywebdesign/" class="footer-social" aria-label="Instagram" rel="noopener noreferrer" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            
+            <a href="https://share.google/xaEPedYfQ58yE66RW" class="footer-social" aria-label="Google Reviews" rel="noopener noreferrer" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Services Column -->
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Web Design</a></li>
+            <li><a href="seo.html">SEO Services</a></li>
+            <li><a href="custom-websites.html">Custom Websites</a></li>
+            <li><a href="monthly-plans.html">Monthly Plans</a></li>
+            <li><a href="services.html#maintenance">Website Maintenance</a></li>
+            <li><a href="services.html#branding">Branding</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="blog.html">Blog &amp; Resources</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="contact.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                majestywebdesign@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+16169157546">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 4.69 12 19.79 19.79 0 0 1 1.2 3.18 2 2 0 0 1 3.18 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.82 5.82l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16l-.36-.07"/></svg>
+                (616) 915-7546
+              </a>
+            </li>
+            <li>
+              <a href="contact.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Michigan, United States
+              </a>
+            </li>
+            <li style="margin-top:1rem">
+              <a href="contact.html" class="btn btn-primary btn-sm">Get Free Quote</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-bottom-text">© 2026 Majesty Web Design. All rights reserved. Based in Michigan.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" aria-hidden="true"></div>
+
+  <!-- Floating CTA Strip -->
+  <div id="floating-cta" role="complementary" aria-label="Limited-time offer">
+    <p class="floating-cta-text">🎉 <strong>This week:</strong> Get your free homepage preview — see it before you pay</p>
+    <a href="#free-preview" class="floating-cta-btn" id="floating-cta-btn">Claim It →</a>
+    <button class="floating-cta-close" id="floating-cta-close" aria-label="Dismiss offer">×</button>
+  </div>
+
+  <!-- Exit Intent Popup -->
+  <div id="exit-popup" role="dialog" aria-modal="true" aria-labelledby="exit-popup-title">
+    <div class="exit-popup-card">
+      <button class="exit-popup-close" id="exit-popup-close" aria-label="Close popup">×</button>
+      <div class="exit-popup-emoji">🎁</div>
+      <h2 class="exit-popup-title" id="exit-popup-title">Wait — Before You Go!</h2>
+      <p class="exit-popup-sub">Get a <strong>free custom homepage mockup</strong> for your business — designed by our Michigan team, no strings attached. See what your new site could look like in 48 hours.</p>
+      <form class="exit-popup-form" id="exit-popup-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="06b09dba-d741-4e7f-8598-774131fcbfe6" />
+        <input type="hidden" name="subject" value="Exit Popup — Free Mockup Request" />
+        <input type="hidden" name="redirect" value="false" />
+        <input type="text" name="name" placeholder="Your Name" required autocomplete="name" />
+        <input type="email" name="email" placeholder="Your Email Address" required autocomplete="email" />
+        <input type="text" name="business" placeholder="Business Type (e.g. Plumber, Salon, Gym…)" />
+        <button type="submit" class="btn btn-primary w-full" id="exit-popup-submit">Get My Free Mockup →</button>
+      </form>
+      <p class="exit-popup-disclaimer">No spam, ever. We respect your privacy.</p>
+    </div>
+  </div>
+
+  <!-- Crisp Live Chat -->
+  <script type="text/javascript">
+    window.$crisp=[];
+    window.CRISP_WEBSITE_ID="b58f30dd-bcfd-433a-92f8-27cb779f84d4";
+    (function(){
+      var d=document,s=d.createElement("script");
+      s.src="https://client.crisp.chat/l.js";
+      s.async=1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

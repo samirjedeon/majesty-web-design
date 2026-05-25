@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog &amp; Resources — Majesty Web Design | Web Design &amp; SEO Tips</title>
+  <meta name="description" content="Free web design, SEO, and digital marketing tips for small business owners. Learn how to grow your business online with expert advice from Majesty Web Design." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .blog-hero-card { background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(139,92,246,0.08)); border: 1px solid rgba(0,212,255,0.15); border-radius: 1.5rem; padding: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 4rem; transition: all var(--ease-base); }
+    .blog-hero-card:hover { border-color: rgba(0,212,255,0.25); box-shadow: var(--shadow-cyan); }
+    .blog-hero-thumb { border-radius: 1rem; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; background: rgba(0,212,255,0.06); border: 1px solid rgba(0,212,255,0.1); }
+    .blog-hero-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.75rem; }
+    .blog-hero-title { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+    .blog-hero-excerpt { color: var(--gray-400); line-height: 1.7; margin-bottom: 1.5rem; }
+    .blog-categories { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .blog-category-btn { padding: 0.5rem 1.25rem; border-radius: 2rem; font-size: 0.875rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.1); color: var(--gray-400); background: transparent; cursor: pointer; transition: all var(--ease-fast); }
+    .blog-category-btn:hover, .blog-category-btn.active { background: rgba(0,212,255,0.1); border-color: rgba(0,212,255,0.3); color: var(--cyan); }
+    .blog-hero-card > * { min-width: 0; }
+    @media (max-width: 900px) {
+      .blog-hero-card { grid-template-columns: 1fr; padding: 1.75rem; gap: 1.5rem; }
+      .blog-hero-thumb { display: none; } /* hide decorative thumbnail on mobile — text is the focus */
+    }
+  </style>
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://www.majestywebdesign.com/blog.html" />
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.majestywebdesign.com/blog.html" />
+  <meta property="og:title" content="Blog & Resources — Web Design & SEO Tips | Majesty Web Design" />
+  <meta property="og:description" content="Free web design and SEO tips for Michigan small business owners. Learn how to grow your business online with expert advice." />
+  <meta property="og:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <meta property="og:site_name" content="Majesty Web Design" />
+  <meta property="og:locale" content="en_US" />
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog & Resources — Web Design & SEO Tips | Majesty Web Design" />
+  <meta name="twitter:description" content="Free web design and SEO tips for Michigan small business owners. Learn how to grow your business online with expert advice." />
+  <meta name="twitter:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <!-- SEO: Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://www.majestywebdesign.com/#business",
+    "name": "Majesty Web Design",
+    "description": "Michigan's premier web design agency helping small businesses grow online with affordable monthly website packages.",
+    "url": "https://www.majestywebdesign.com",
+    "logo": "https://www.majestywebdesign.com/images/logo.webp",
+    "image": "https://www.majestywebdesign.com/images/logo.webp",
+    "telephone": "+16169157546",
+    "email": "majestywebdesign@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
+    "areaServed":[{"@type":"State","name":"Michigan"},{"@type":"City","name":"Detroit","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Warren","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Sterling Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Troy","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Southfield","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Royal Oak","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Farmington Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Livonia","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Novi","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Ann Arbor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Macomb","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Pontiac","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Rochester Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Canton","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Dearborn","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Westland","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Taylor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Lansing","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Grand Rapids","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Flint","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Clinton Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Shelby Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Utica","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Madison Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Roseville","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Saint Clair Shores","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Chesterfield","containedInPlace":{"@type":"State","name":"Michigan"}}],
+    "priceRange": "$$",
+    "openingHoursSpecification": [{"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "18:00"}],
+    "sameAs":[],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"7","bestRating":"5","worstRating":"1"}
+  }
+  ]
+  </script>
+
+  <!-- SEO: BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.majestywebdesign.com/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://www.majestywebdesign.com/blog.html"}]}
+  </script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRBPFDXPTJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VRBPFDXPTJ');
+  </script>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="services.html">Services <span class="drop-icon">▾</span></a><ul class="dropdown-menu"><li><a href="services.html">All Services</a></li><li><a href="seo.html">SEO Services</a></li><li><a href="custom-websites.html">Custom Websites</a></li><li><a href="industries.html">Industries We Serve</a></li></ul></li>
+      <li class="nav-dropdown"><a href="pricing.html">Pricing <span class="drop-icon">▾</span></a><ul class="dropdown-menu"><li><a href="pricing.html">Pricing Overview</a></li><li><a href="packages.html">Website Packages</a></li><li><a href="monthly-plans.html">Monthly Plans</a></li></ul></li>
+      <li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="blog.html" class="active">Resources</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions"><a href="tel:+16169157546" class="btn btn-outline btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 4.69 12 19.79 19.79 0 0 1 1.2 3.18 2 2 0 0 1 3.18 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.82 5.82l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16l-.36-.07"/></svg> Call Us</a><a href="contact.html" class="btn btn-primary btn-sm">Get Started</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="pricing.html">Pricing</a><a href="blog.html">Resources</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><div class="mobile-cta"><a href="contact.html" class="btn btn-primary w-full" style="justify-content:center">Get Your Free Quote</a></div></div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-bg"><div class="hero-orb hero-orb-1" style="opacity:0.2"></div><div class="hero-orb hero-orb-2" style="opacity:0.15"></div><div class="hero-grid"></div></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span>Blog &amp; Resources</span></nav>
+      <div class="section-label" style="justify-content:center">Blog &amp; Resources</div>
+      <h1 class="section-title reveal" style="font-size:clamp(2.25rem,5vw,3.5rem);margin-bottom:1.25rem">Free Tips to Help Your<br /><span class="text-gradient">Business Grow Online</span></h1>
+      <p class="section-subtitle mx-auto reveal delay-1">No jargon, no filler. Practical web design, SEO, and digital marketing advice written specifically for small business owners.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- Featured Post -->
+      <div class="blog-hero-card reveal">
+        <div>
+          <div class="blog-hero-label">⭐ Featured Article</div>
+          <h2 class="blog-hero-title">Why Your Website Isn't Generating Leads (And How to Fix It in 7 Days)</h2>
+          <p class="blog-hero-excerpt">Most small business websites have the same five problems — and fixing them can 2x or 3x your inbound leads without spending a dollar on ads. Here's exactly what to look for and how to fix it.</p>
+          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+            <span style="font-size:0.8125rem;color:var(--gray-500)">May 20, 2026</span>
+            <span style="color:rgba(255,255,255,0.15)">·</span>
+            <span style="font-size:0.8125rem;color:var(--gray-500)">8 min read</span>
+          </div>
+          <a href="blog-website-not-generating-leads.html" class="btn btn-primary">Read Article</a>
+        </div>
+        <div class="blog-hero-thumb"><svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:60%;opacity:0.3"><circle cx="100" cy="60" r="50" stroke="#00D4FF" stroke-width="1"/><circle cx="100" cy="60" r="35" stroke="#8B5CF6" stroke-width="1"/><line x1="60" y1="20" x2="140" y2="100" stroke="#00D4FF" stroke-width="1"/><line x1="140" y1="20" x2="60" y2="100" stroke="#8B5CF6" stroke-width="1"/><circle cx="100" cy="60" r="8" fill="#00D4FF" fill-opacity="0.4"/></svg></div>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="blog-categories reveal">
+        <button class="blog-category-btn active">All Posts</button>
+        <button class="blog-category-btn">Web Design</button>
+        <button class="blog-category-btn">SEO</button>
+        <button class="blog-category-btn">Small Business</button>
+        <button class="blog-category-btn">Marketing</button>
+        </div>
+
+      <!-- Blog Grid -->
+      <div class="blog-grid">
+
+        <!-- LOCAL SEO -->
+        <article class="blog-card reveal delay-1">
+          <div class="blog-thumb-placeholder" style="background:linear-gradient(135deg,rgba(0,212,255,0.18) 0%,rgba(0,30,60,0.95) 100%)">
+            <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:72%;height:72%">
+              <!-- Radar rings -->
+              <circle cx="160" cy="100" r="70" stroke="#00D4FF" stroke-width="1" stroke-dasharray="4 6" opacity="0.3"/>
+              <circle cx="160" cy="100" r="45" stroke="#00D4FF" stroke-width="1" stroke-dasharray="4 6" opacity="0.5"/>
+              <circle cx="160" cy="100" r="22" stroke="#00D4FF" stroke-width="1.5" opacity="0.7"/>
+              <!-- Map pin -->
+              <path d="M160 55 C148 55 138 65 138 77 C138 95 160 115 160 115 C160 115 182 95 182 77 C182 65 172 55 160 55Z" fill="rgba(0,212,255,0.25)" stroke="#00D4FF" stroke-width="2"/>
+              <circle cx="160" cy="77" r="7" fill="#00D4FF"/>
+              <!-- Search bar at bottom -->
+              <rect x="80" y="135" width="160" height="26" rx="13" fill="rgba(255,255,255,0.06)" stroke="rgba(0,212,255,0.4)" stroke-width="1.5"/>
+              <circle cx="100" cy="148" r="5" stroke="#00D4FF" stroke-width="1.5" fill="none"/>
+              <line x1="104" y1="152" x2="108" y2="156" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+              <rect x="116" y="144" width="60" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+              <rect x="116" y="151" width="40" height="3" rx="1.5" fill="rgba(255,255,255,0.12)"/>
+            </svg>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-category">SEO</span><span class="blog-date">May 13, 2026</span></div>
+            <h3>Local SEO in 2026: The Complete Guide for Michigan Small Businesses</h3>
+            <p>Everything you need to know about ranking on Google Maps and local search results — without hiring an expensive SEO agency.</p>
+            <a href="blog-local-seo-michigan.html" class="btn btn-ghost">Read More <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+        <!-- WEBSITE COSTING CUSTOMERS -->
+        <article class="blog-card reveal delay-2">
+          <div class="blog-thumb-placeholder" style="background:linear-gradient(135deg,rgba(239,68,68,0.18) 0%,rgba(40,5,5,0.97) 100%)">
+            <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:72%;height:72%">
+              <!-- Browser outline -->
+              <rect x="60" y="30" width="200" height="130" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(239,68,68,0.5)" stroke-width="2"/>
+              <rect x="60" y="30" width="200" height="28" rx="10" fill="rgba(239,68,68,0.12)" stroke="rgba(239,68,68,0.5)" stroke-width="2"/>
+              <!-- Traffic light dots -->
+              <circle cx="82" cy="44" r="5" fill="rgba(239,68,68,0.8)"/>
+              <circle cx="98" cy="44" r="5" fill="rgba(251,191,36,0.5)"/>
+              <circle cx="114" cy="44" r="5" fill="rgba(16,185,129,0.5)"/>
+              <!-- Warning triangle centered -->
+              <path d="M160 75 L188 122 L132 122 Z" fill="rgba(239,68,68,0.2)" stroke="#EF4444" stroke-width="2.5" stroke-linejoin="round"/>
+              <line x1="160" y1="91" x2="160" y2="109" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="160" cy="116" r="2.5" fill="#EF4444"/>
+              <!-- Customers leaving arrows -->
+              <path d="M204 90 L220 90 M216 84 L222 90 L216 96" stroke="rgba(239,68,68,0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M204 105 L220 105 M216 99 L222 105 L216 111" stroke="rgba(239,68,68,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-category">Web Design</span><span class="blog-date">May 6, 2026</span></div>
+            <h3>5 Signs Your Website Is Costing You Customers (Not Winning Them)</h3>
+            <p>Is your website working against you? These five red flags might be driving potential customers straight to your competitors.</p>
+            <a href="blog-website-costing-customers.html" class="btn btn-ghost">Read More <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+        <!-- MONTHLY VS ONE-TIME -->
+        <article class="blog-card reveal delay-3">
+          <div class="blog-thumb-placeholder" style="background:linear-gradient(135deg,rgba(16,185,129,0.18) 0%,rgba(5,30,20,0.97) 100%)">
+            <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:72%;height:72%">
+              <!-- Grid lines -->
+              <line x1="70" y1="40" x2="70" y2="145" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+              <line x1="70" y1="145" x2="260" y2="145" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+              <line x1="70" y1="115" x2="260" y2="115" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="4 4"/>
+              <line x1="70" y1="85" x2="260" y2="85" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="4 4"/>
+              <!-- Bar 1: One-time (tall = expensive) -->
+              <rect x="100" y="58" width="48" height="87" rx="6" fill="rgba(239,68,68,0.3)" stroke="rgba(239,68,68,0.7)" stroke-width="1.5"/>
+              <text x="124" y="52" fill="rgba(239,68,68,0.9)" font-size="10" text-anchor="middle" font-family="system-ui">$27k</text>
+              <!-- Bar 2: Monthly (short = affordable) -->
+              <rect x="172" y="108" width="48" height="37" rx="6" fill="rgba(16,185,129,0.3)" stroke="#10B981" stroke-width="1.5"/>
+              <text x="196" y="102" fill="#10B981" font-size="10" text-anchor="middle" font-family="system-ui">$5.4k</text>
+              <!-- Labels -->
+              <text x="124" y="160" fill="rgba(255,255,255,0.4)" font-size="9" text-anchor="middle" font-family="system-ui">One-Time</text>
+              <text x="196" y="160" fill="rgba(255,255,255,0.4)" font-size="9" text-anchor="middle" font-family="system-ui">Monthly</text>
+              <!-- "3-year cost" label -->
+              <text x="165" y="28" fill="rgba(255,255,255,0.3)" font-size="9" text-anchor="middle" font-family="system-ui">3-YEAR TOTAL COST</text>
+            </svg>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-category">Small Business</span><span class="blog-date">April 29, 2026</span></div>
+            <h3>Monthly vs. One-Time Website: Which Model Is Right for Your Business?</h3>
+            <p>The real cost comparison between paying upfront and using a monthly subscription model — and which one delivers more value.</p>
+            <a href="blog-monthly-vs-one-time-website.html" class="btn btn-ghost">Read More <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+        <!-- GOOGLE REVIEWS -->
+        <article class="blog-card reveal delay-1">
+          <div class="blog-thumb-placeholder" style="background:linear-gradient(135deg,rgba(251,191,36,0.18) 0%,rgba(30,18,0,0.97) 100%)">
+            <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:72%;height:72%">
+              <!-- 5 stars row -->
+              <g transform="translate(52,52)">
+                <path d="M18 2l4.1 8.3L32 11.6 25 18.4l1.6 9.2L18 23.1l-8.6 4.5L11 18.4 4 11.6l9.9-1.3Z" fill="rgba(251,191,36,0.85)" stroke="#F59E0B" stroke-width="1"/>
+              </g>
+              <g transform="translate(104,52)">
+                <path d="M18 2l4.1 8.3L32 11.6 25 18.4l1.6 9.2L18 23.1l-8.6 4.5L11 18.4 4 11.6l9.9-1.3Z" fill="rgba(251,191,36,0.85)" stroke="#F59E0B" stroke-width="1"/>
+              </g>
+              <g transform="translate(156,52)">
+                <path d="M18 2l4.1 8.3L32 11.6 25 18.4l1.6 9.2L18 23.1l-8.6 4.5L11 18.4 4 11.6l9.9-1.3Z" fill="rgba(251,191,36,0.85)" stroke="#F59E0B" stroke-width="1"/>
+              </g>
+              <g transform="translate(208,52)">
+                <path d="M18 2l4.1 8.3L32 11.6 25 18.4l1.6 9.2L18 23.1l-8.6 4.5L11 18.4 4 11.6l9.9-1.3Z" fill="rgba(251,191,36,0.85)" stroke="#F59E0B" stroke-width="1"/>
+              </g>
+              <g transform="translate(260,52)">
+                <path d="M18 2l4.1 8.3L32 11.6 25 18.4l1.6 9.2L18 23.1l-8.6 4.5L11 18.4 4 11.6l9.9-1.3Z" fill="rgba(251,191,36,0.85)" stroke="#F59E0B" stroke-width="1"/>
+              </g>
+              <!-- Speech bubble -->
+              <rect x="95" y="108" width="130" height="46" rx="10" fill="rgba(251,191,36,0.1)" stroke="rgba(251,191,36,0.4)" stroke-width="1.5"/>
+              <path d="M140 154 L148 166 L156 154" fill="rgba(251,191,36,0.1)" stroke="rgba(251,191,36,0.4)" stroke-width="1.5" stroke-linejoin="round"/>
+              <rect x="110" y="119" width="80" height="6" rx="3" fill="rgba(251,191,36,0.4)"/>
+              <rect x="115" y="131" width="60" height="6" rx="3" fill="rgba(251,191,36,0.25)"/>
+              <!-- "5.0" label -->
+              <text x="160" y="100" fill="#F59E0B" font-size="11" text-anchor="middle" font-family="system-ui" font-weight="700">5.0 · 47 reviews</text>
+            </svg>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-category">Marketing</span><span class="blog-date">April 22, 2026</span></div>
+            <h3>How to Get More Google Reviews for Your Local Business (Without Begging)</h3>
+            <p>A systematic approach to collecting authentic 5-star reviews that build trust and boost your local SEO rankings automatically.</p>
+            <a href="blog-google-reviews.html" class="btn btn-ghost">Read More <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+        <!-- DESIGN MISTAKES -->
+        <article class="blog-card reveal delay-3">
+          <div class="blog-thumb-placeholder" style="background:linear-gradient(135deg,rgba(139,92,246,0.18) 0%,rgba(15,5,40,0.97) 100%)">
+            <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:72%;height:72%">
+              <!-- Browser frame -->
+              <rect x="50" y="25" width="220" height="140" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(139,92,246,0.5)" stroke-width="2"/>
+              <rect x="50" y="25" width="220" height="28" rx="10" fill="rgba(139,92,246,0.1)" stroke="rgba(139,92,246,0.5)" stroke-width="2"/>
+              <circle cx="70" cy="39" r="5" fill="rgba(139,92,246,0.6)"/>
+              <circle cx="86" cy="39" r="5" fill="rgba(139,92,246,0.35)"/>
+              <circle cx="102" cy="39" r="5" fill="rgba(139,92,246,0.2)"/>
+              <!-- Checklist items with X marks -->
+              <line x1="80" y1="75" x2="88" y2="83" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+              <line x1="88" y1="75" x2="80" y2="83" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+              <rect x="98" y="73" width="110" height="5" rx="2.5" fill="rgba(255,255,255,0.15)"/>
+              <rect x="98" y="82" width="75" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
+
+              <line x1="80" y1="100" x2="88" y2="108" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+              <line x1="88" y1="100" x2="80" y2="108" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+              <rect x="98" y="98" width="95" height="5" rx="2.5" fill="rgba(255,255,255,0.15)"/>
+              <rect x="98" y="107" width="60" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
+
+              <!-- One checkmark = fixed -->
+              <path d="M78 128 L83 133 L92 122" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="98" y="123" width="105" height="5" rx="2.5" fill="rgba(16,185,129,0.3)"/>
+              <rect x="98" y="132" width="70" height="4" rx="2" fill="rgba(16,185,129,0.15)"/>
+
+              <!-- "10 mistakes" badge -->
+              <rect x="196" y="30" width="58" height="18" rx="4" fill="rgba(139,92,246,0.5)"/>
+              <text x="225" y="42" fill="white" font-size="9" text-anchor="middle" font-family="system-ui" font-weight="700">10 MISTAKES</text>
+            </svg>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-category">Web Design</span><span class="blog-date">April 15, 2026</span></div>
+            <h3>10 Website Design Mistakes That Kill Conversions (And How to Fix Them)</h3>
+            <p>From confusing navigation to buried contact forms — the most common design mistakes we see on small business websites and exactly how to fix each one.</p>
+            <a href="blog-website-design-mistakes.html" class="btn btn-ghost">Read More <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cta-section reveal" style="max-width:680px;margin-inline:auto">
+        <div class="section-label" style="justify-content:center">Stay in the loop</div>
+        <h2 class="section-title">Get Weekly Tips Delivered<br /><span class="text-gradient">to Your Inbox</span></h2>
+        <p class="section-subtitle">No spam, no fluff. Just one actionable tip every week to help your business grow online. Unsubscribe anytime.</p>
+        <form style="display:flex;gap:0.75rem;margin-top:2rem;flex-wrap:wrap;justify-content:center" onsubmit="event.preventDefault()">
+          <input type="email" placeholder="your@email.com" class="form-input" style="flex:1;min-width:220px;max-width:340px" aria-label="Email address" />
+          <button type="submit" class="btn btn-primary">Subscribe Free</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" style="height:36px;width:auto" /></a><p>Michigan's trusted web design agency helping small businesses grow online.</p></div><div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="services.html">Web Design</a></li><li><a href="seo.html">SEO Services</a></li><li><a href="custom-websites.html">Custom Websites</a></li><li><a href="monthly-plans.html">Monthly Plans</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul class="footer-links"><li><a href="mailto:majestywebdesign@gmail.com">majestywebdesign@gmail.com</a></li><li><a href="tel:+16169157546">(616) 915-7546</a></li><li style="margin-top:1rem"><a href="contact.html" class="btn btn-primary btn-sm">Get Free Quote</a></li></ul></div></div><div class="footer-bottom"><p class="footer-bottom-text">© 2026 Majesty Web Design. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div></div></footer>
+<script src="js/main.js" defer></script>
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" aria-hidden="true"></div>
+
+  <!-- Crisp Live Chat -->
+  <script type="text/javascript">
+    window.$crisp=[];
+    window.CRISP_WEBSITE_ID="b58f30dd-bcfd-433a-92f8-27cb779f84d4";
+    (function(){
+      var d=document,s=d.createElement("script");
+      s.src="https://client.crisp.chat/l.js";
+      s.async=1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
+
+</body>
+</html>

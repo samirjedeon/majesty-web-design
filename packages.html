@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Packages — Majesty Web Design | Monthly &amp; Annual Plans</title>
+  <meta name="description" content="Explore our website packages — pay monthly from $149 or save 20% with annual billing. Own your site after 12 months. Hosting, edits, SEO &amp; support included." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .package-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .package-card { background: var(--bg-card); border: 1px solid var(--bg-glass-border); border-radius: 1.5rem; overflow: hidden; transition: all var(--ease-base); }
+    .package-card:hover { border-color: rgba(0,212,255,0.2); transform: translateY(-4px); }
+    .package-card.featured { border-color: rgba(139,92,246,0.35); background: linear-gradient(135deg, rgba(0,212,255,0.05) 0%, rgba(139,92,246,0.05) 100%); }
+    .package-header { padding: 2rem 2rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; }
+    .package-header.featured { background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(139,92,246,0.08)); }
+    .package-popular { position: absolute; top: 1.25rem; right: 1.25rem; background: var(--gradient-brand); color: white; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.625rem; border-radius: 2rem; }
+    .package-name { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray-400); margin-bottom: 1rem; }
+    .package-price { display: flex; align-items: flex-end; gap: 0.25rem; }
+    .package-price .currency { font-size: 1.25rem; font-weight: 700; color: var(--gray-300); margin-bottom: 0.375rem; }
+    .package-price .amount { font-family: var(--font-display); font-size: 3rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+    .package-price .period { font-size: 0.875rem; color: var(--gray-500); margin-bottom: 0.375rem; }
+    .package-pages { display: inline-flex; margin-top: 0.75rem; padding: 0.25rem 0.75rem; background: rgba(0,212,255,0.1); border-radius: 2rem; font-size: 0.8125rem; color: var(--cyan); font-weight: 600; }
+    .package-body { padding: 2rem; }
+    .package-section-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-500); margin-bottom: 0.75rem; margin-top: 1.25rem; }
+    .package-section-label:first-child { margin-top: 0; }
+    .package-feature { display: flex; align-items: center; gap: 0.625rem; font-size: 0.875rem; color: var(--gray-300); margin-bottom: 0.625rem; }
+    .pkg-check { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.7rem; }
+    .pkg-check-yes { background: rgba(0,212,255,0.15); color: var(--cyan); }
+    .pkg-check-no { background: rgba(255,255,255,0.05); color: var(--gray-600); }
+    .package-footer { padding: 0 2rem 2rem; }
+    @media (max-width: 900px) { .package-cards { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; } }
+  </style>
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://www.majestywebdesign.com/packages.html" />
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.majestywebdesign.com/packages.html" />
+  <meta property="og:title" content="Website Packages — What's Included | Majesty Web Design" />
+  <meta property="og:description" content="See exactly what's included in each Majesty Web Design package. Hosting, SSL, edits, SEO & support — all in one flat monthly price." />
+  <meta property="og:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <meta property="og:site_name" content="Majesty Web Design" />
+  <meta property="og:locale" content="en_US" />
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Website Packages — What's Included | Majesty Web Design" />
+  <meta name="twitter:description" content="See exactly what's included in each Majesty Web Design package. Hosting, SSL, edits, SEO & support — all in one flat monthly price." />
+  <meta name="twitter:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <!-- SEO: Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://www.majestywebdesign.com/#business",
+    "name": "Majesty Web Design",
+    "description": "Michigan's premier web design agency helping small businesses grow online with affordable monthly website packages.",
+    "url": "https://www.majestywebdesign.com",
+    "logo": "https://www.majestywebdesign.com/images/logo.webp",
+    "image": "https://www.majestywebdesign.com/images/logo.webp",
+    "telephone": "+16169157546",
+    "email": "majestywebdesign@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
+    "areaServed":[{"@type":"State","name":"Michigan"},{"@type":"City","name":"Detroit","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Warren","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Sterling Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Troy","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Southfield","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Royal Oak","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Farmington Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Livonia","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Novi","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Ann Arbor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Macomb","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Pontiac","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Rochester Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Canton","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Dearborn","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Westland","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Taylor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Lansing","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Grand Rapids","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Flint","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Clinton Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Shelby Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Utica","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Madison Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Roseville","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Saint Clair Shores","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Chesterfield","containedInPlace":{"@type":"State","name":"Michigan"}}],
+    "priceRange": "$$",
+    "openingHoursSpecification": [{"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "18:00"}],
+    "sameAs":[],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"7","bestRating":"5","worstRating":"1"}
+  }
+  ]
+  </script>
+
+  <!-- SEO: BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.majestywebdesign.com/"},{"@type":"ListItem","position":2,"name":"Pricing","item":"https://www.majestywebdesign.com/pricing.html"},{"@type":"ListItem","position":3,"name":"Website Packages","item":"https://www.majestywebdesign.com/packages.html"}]}
+  </script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRBPFDXPTJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VRBPFDXPTJ');
+  </script>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="services.html">Services <span class="drop-icon">▾</span></a><ul class="dropdown-menu"><li><a href="services.html">All Services</a></li><li><a href="seo.html">SEO Services</a></li><li><a href="custom-websites.html">Custom Websites</a></li><li><a href="industries.html">Industries We Serve</a></li></ul></li>
+      <li class="nav-dropdown"><a href="pricing.html" class="active">Pricing <span class="drop-icon">▾</span></a><ul class="dropdown-menu"><li><a href="pricing.html">Pricing Overview</a></li><li><a href="packages.html">Website Packages</a></li><li><a href="monthly-plans.html">Monthly Plans</a></li></ul></li>
+      <li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="blog.html">Resources</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions"><a href="tel:+16169157546" class="btn btn-outline btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 4.69 12 19.79 19.79 0 0 1 1.2 3.18 2 2 0 0 1 3.18 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.82 5.82l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16l-.36-.07"/></svg> Call Us</a><a href="contact.html" class="btn btn-primary btn-sm">Get Started</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="pricing.html">Pricing</a><a href="packages.html">Website Packages</a><a href="monthly-plans.html">Monthly Plans</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><div class="mobile-cta"><a href="contact.html" class="btn btn-primary w-full" style="justify-content:center">Get Your Free Quote</a></div></div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-bg"><div class="hero-orb hero-orb-1" style="opacity:0.25"></div><div class="hero-orb hero-orb-2" style="opacity:0.2"></div><div class="hero-grid"></div></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><a href="pricing.html">Pricing</a><span class="sep">›</span><span>Website Packages</span></nav>
+      <div class="section-label" style="justify-content:center">Website Packages</div>
+      <h1 class="section-title reveal" style="font-size:clamp(2.25rem,5vw,3.5rem);margin-bottom:1.25rem">Everything You Need,<br /><span class="text-gradient">Nothing You Don't</span></h1>
+      <p class="section-subtitle mx-auto reveal delay-1">Each package is designed to give your business the exact tools it needs to grow online — at a price that makes sense.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="package-cards reveal">
+        <!-- Starter -->
+        <div class="package-card">
+          <div class="package-header">
+            <div class="package-name">Starter</div>
+            <div class="package-price"><span class="currency">$</span><span class="amount">149</span><span class="period">/mo</span></div>
+            <div class="package-pages">5 Pages</div>
+          </div>
+          <div class="package-body">
+            <div class="package-section-label">Website</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>5-Page Custom Website</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Mobile-Responsive Design</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Contact Form</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Google Maps Integration</div>
+            <div class="package-section-label">Hosting &amp; Security</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Fast Managed Hosting</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>SSL Certificate (HTTPS)</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Weekly Backups</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-no">—</span>Daily Backups</div>
+            <div class="package-section-label">Updates &amp; Support</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>2 Updates/Month</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Email Support (48hr)</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-no">—</span>Phone Support</div>
+            <div class="package-section-label">SEO &amp; Marketing</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Basic On-Page SEO</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-no">—</span>Google Business Setup</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-no">—</span>Monthly SEO Report</div>
+            <div class="package-section-label">Ownership</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Own Site After 12 Months</div>
+            <div class="package-feature" style="color:var(--cyan);font-weight:600"><span class="pkg-check pkg-check-yes">✓</span>Annual: Own From Day One</div>
+          </div>
+          <div class="package-footer"><a href="contact.html" class="btn btn-outline w-full" style="justify-content:center">Get Started</a></div>
+        </div>
+
+        <!-- Growth -->
+        <div class="package-card featured">
+          <div class="package-header featured">
+            <div class="package-popular">Most Popular</div>
+            <div class="package-name">Growth</div>
+            <div class="package-price"><span class="currency">$</span><span class="amount text-gradient">199</span><span class="period">/mo</span></div>
+            <div class="package-pages" style="background:rgba(139,92,246,0.15);color:var(--purple-light);border:1px solid rgba(139,92,246,0.2)">10 Pages</div>
+          </div>
+          <div class="package-body">
+            <div class="package-section-label">Website</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes" style="background:rgba(139,92,246,0.15);color:var(--purple-light)">✓</span>10-Page Custom Website</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes" style="background:rgba(139,92,246,0.15);color:var(--purple-light)">✓</span>Mobile-Responsive Design</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes" style="background:rgba(139,92,246,0.15);color:var(--purple-light)">✓</span>Contact Form &amp; Lead Capture</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes" style="background:rgba(139,92,246,0.15);color:var(--purple-light)">✓</span>Blog/News Section</div>
+            <div class="package-section-label">Hosting &amp; Security</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes" style="background:rgba(139,92,246,0.15);color:var(--purple-light)">✓</span>Premium Managed Hosting</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes" style="background:rgba(139,92,246,0.15);color:var(--purple-light)">✓</span>SSL Certificate (HTTPS)</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes" style="background:rgba(139,92,246,0.15);color:var(--purple-light)">✓</span>Daily Backups</div>
+            <div class="package-section-label">Updates &amp; Support</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes" style="background:rgba(139,92,246,0.15);color:var(--purple-light)">✓</span>Unlimited Updates</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes" style="background:rgba(139,92,246,0.15);color:var(--purple-light)">✓</span>Email &amp; Phone (24hr)</div>
+            <div class="package-section-label">SEO &amp; Marketing</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes" style="background:rgba(139,92,246,0.15);color:var(--purple-light)">✓</span>Full On-Page SEO</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes" style="background:rgba(139,92,246,0.15);color:var(--purple-light)">✓</span>Google Business Setup &amp; Optimization</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes" style="background:rgba(139,92,246,0.15);color:var(--purple-light)">✓</span>Monthly SEO Report</div>
+            <div class="package-section-label">Ownership</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes" style="background:rgba(139,92,246,0.15);color:var(--purple-light)">✓</span>Own Site After 12 Months</div>
+            <div class="package-feature" style="color:var(--cyan);font-weight:600"><span class="pkg-check pkg-check-yes">✓</span>Annual: Own From Day One</div>
+          </div>
+          <div class="package-footer"><a href="contact.html" class="btn btn-primary w-full" style="justify-content:center">Get Started</a></div>
+        </div>
+
+        <!-- Elite -->
+        <div class="package-card">
+          <div class="package-header">
+            <div class="package-name">Elite</div>
+            <div class="package-price"><span class="currency">$</span><span class="amount">249</span><span class="period">/mo</span></div>
+            <div class="package-pages">Unlimited Pages</div>
+          </div>
+          <div class="package-body">
+            <div class="package-section-label">Website</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Unlimited Pages</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>E-Commerce Functionality</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>All Growth Features</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Conversion Rate Optimization</div>
+            <div class="package-section-label">Hosting &amp; Security</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Enterprise Hosting</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>SSL Certificate (HTTPS)</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Daily Backups + Instant Restore</div>
+            <div class="package-section-label">Updates &amp; Support</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Unlimited Same-Day Updates</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Dedicated Account Manager</div>
+            <div class="package-section-label">SEO &amp; Marketing</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Advanced Local SEO Campaign</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Google Business Management</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Quarterly Strategy Call</div>
+            <div class="package-section-label">Ownership</div>
+            <div class="package-feature"><span class="pkg-check pkg-check-yes">✓</span>Own Site After 12 Months</div>
+            <div class="package-feature" style="color:var(--cyan);font-weight:600"><span class="pkg-check pkg-check-yes">✓</span>Annual: Own From Day One</div>
+          </div>
+          <div class="package-footer"><a href="contact.html" class="btn btn-outline w-full" style="justify-content:center">Get Started</a></div>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-gray mt-8 reveal">All plans include free setup · No contracts · Own your site after 12 months · <strong style="color:var(--cyan)">Save 20% with annual billing</strong>. <a href="faq.html" class="text-cyan">Have questions? See our FAQ →</a></p>
+    </div>
+  </section>
+
+  <!-- WHAT'S ALWAYS INCLUDED -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="section-label reveal">In Every Plan</div>
+        <h2 class="section-title reveal delay-1">Things That Are<br /><span class="text-gradient">Always Included</span></h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-item reveal delay-1"><div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Zero Setup Fees</h3><p>We never charge a setup or onboarding fee. Your first payment is your first month — nothing more.</p></div>
+        <div class="feature-item reveal delay-2"><div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div><h3>Free Consultation</h3><p>Every client gets a strategy consultation before we start — so we understand your goals and build the right site.</p></div>
+        <div class="feature-item reveal delay-3"><div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div><h3>Mobile Responsive</h3><p>Every site works perfectly on phones, tablets, and desktops. No extra charge — it's standard on every plan.</p></div>
+        <div class="feature-item reveal delay-1"><div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>SSL Security</h3><p>Every site gets a free SSL certificate for HTTPS encryption. This is required for Google trust signals and SEO.</p></div>
+        <div class="feature-item reveal delay-2"><div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><h3>Basic SEO Setup</h3><p>Every page gets optimized meta titles, descriptions, and image alt tags so search engines can find and rank your site.</p></div>
+        <div class="feature-item reveal delay-3"><div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 4.69 12 19.79 19.79 0 0 1 1.2 3.18 2 2 0 0 1 3.18 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.82 5.82l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16"/></svg></div><h3>Ongoing Support</h3><p>You're never left alone. Every plan includes support from a real human who knows your website.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-section reveal">
+        <div class="section-label" style="justify-content:center">Ready?</div>
+        <h2 class="section-title">Pick Your Package and<br /><span class="text-gradient">Let's Get to Work</span></h2>
+        <p class="section-subtitle">Not sure which is right for you? We'll build your homepage for free so you can see exactly what your site would look like — no commitment required.</p>
+        <div class="cta-actions mt-8">
+          <a href="index.html#free-preview" class="btn btn-primary btn-lg">Get a Free Homepage Preview</a>
+          <a href="pricing.html" class="btn btn-outline btn-lg">See All Plans &amp; Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" style="height:36px;width:auto" /></a><p>Michigan's trusted web design agency helping small businesses grow online.</p></div><div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="services.html">Web Design</a></li><li><a href="seo.html">SEO Services</a></li><li><a href="custom-websites.html">Custom Websites</a></li><li><a href="monthly-plans.html">Monthly Plans</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul class="footer-links"><li><a href="mailto:majestywebdesign@gmail.com">majestywebdesign@gmail.com</a></li><li><a href="tel:+16169157546">(616) 915-7546</a></li><li style="margin-top:1rem"><a href="contact.html" class="btn btn-primary btn-sm">Get Free Quote</a></li></ul></div></div><div class="footer-bottom"><p class="footer-bottom-text">© 2026 Majesty Web Design. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div></div></footer>
+<script src="js/main.js" defer></script>
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" aria-hidden="true"></div>
+
+  <!-- Crisp Live Chat -->
+  <script type="text/javascript">
+    window.$crisp=[];
+    window.CRISP_WEBSITE_ID="b58f30dd-bcfd-433a-92f8-27cb779f84d4";
+    (function(){
+      var d=document,s=d.createElement("script");
+      s.src="https://client.crisp.chat/l.js";
+      s.async=1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
+
+</body>
+</html>

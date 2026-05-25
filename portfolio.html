@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Majesty Web Design | Client Work &amp; Case Studies</title>
+  <meta name="description" content="Browse our portfolio of websites built for Michigan small businesses. See real results — more leads, better rankings, and stunning designs." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .filter-bar { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .filter-btn { padding: 0.5rem 1.25rem; border-radius: 2rem; font-size: 0.875rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.1); color: var(--gray-400); background: transparent; cursor: pointer; transition: all var(--ease-fast); }
+    .filter-btn:hover, .filter-btn.active { background: rgba(0,212,255,0.1); border-color: rgba(0,212,255,0.3); color: var(--cyan); }
+    .portfolio-grid-lg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .portfolio-item-lg { border-radius: 1.25rem; overflow: hidden; position: relative; background: var(--bg-card); border: 1px solid var(--bg-glass-border); cursor: pointer; transition: all var(--ease-base); }
+    .portfolio-item-lg:hover { border-color: rgba(0,212,255,0.25); transform: translateY(-6px); box-shadow: var(--shadow-cyan), var(--shadow-md); }
+    .portfolio-thumb { width: 100%; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background-size: cover; background-position: center; transition: transform 0.5s ease; }
+    .portfolio-item-lg:hover .portfolio-thumb { transform: scale(1.04); }
+    .portfolio-thumb-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .portfolio-item-lg:hover .portfolio-thumb-img { transform: scale(1.04); }
+    .portfolio-info { padding: 1.5rem; }
+    .portfolio-info h3 { font-size: 1.0625rem; font-weight: 700; margin-bottom: 0.375rem; }
+    .portfolio-info p { font-size: 0.875rem; color: var(--gray-400); margin-bottom: 0.75rem; line-height: 1.5; }
+    .result-pill { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.25rem 0.75rem; background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.15); border-radius: 2rem; font-size: 0.75rem; font-weight: 600; color: var(--cyan); }
+    .live-badge { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.2rem 0.6rem; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); border-radius: 2rem; font-size: 0.7rem; font-weight: 700; color: #34D399; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .live-badge::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #34D399; box-shadow: 0 0 6px #34D399; animation: pulse-dot 1.5s ease-in-out infinite; }
+    @keyframes pulse-dot { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(0.75); } }
+    .visit-link { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.8rem; font-weight: 600; color: var(--cyan); text-decoration: none; margin-top: 0.5rem; opacity: 0.8; transition: opacity 0.2s; }
+    .visit-link:hover { opacity: 1; }
+    .portfolio-info-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+    @media (max-width: 900px) { .portfolio-grid-lg { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .portfolio-grid-lg { grid-template-columns: 1fr; } .case-stats { grid-template-columns: 1fr; } }
+  </style>
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://www.majestywebdesign.com/portfolio.html" />
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.majestywebdesign.com/portfolio.html" />
+  <meta property="og:title" content="Portfolio — Michigan Web Design Work & Results | Majesty Web Design" />
+  <meta property="og:description" content="Browse real websites we've built for Michigan small businesses. See the results: more leads, better Google rankings, and stunning designs." />
+  <meta property="og:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <meta property="og:site_name" content="Majesty Web Design" />
+  <meta property="og:locale" content="en_US" />
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portfolio — Michigan Web Design Work & Results | Majesty Web Design" />
+  <meta name="twitter:description" content="Browse real websites we've built for Michigan small businesses. See the results: more leads, better Google rankings, and stunning designs." />
+  <meta name="twitter:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <!-- SEO: Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://www.majestywebdesign.com/#business",
+    "name": "Majesty Web Design",
+    "description": "Michigan's premier web design agency helping small businesses grow online with affordable monthly website packages.",
+    "url": "https://www.majestywebdesign.com",
+    "logo": "https://www.majestywebdesign.com/images/logo.webp",
+    "image": "https://www.majestywebdesign.com/images/logo.webp",
+    "telephone": "+16169157546",
+    "email": "majestywebdesign@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
+    "areaServed":[{"@type":"State","name":"Michigan"},{"@type":"City","name":"Detroit","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Warren","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Sterling Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Troy","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Southfield","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Royal Oak","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Farmington Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Livonia","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Novi","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Ann Arbor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Macomb","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Pontiac","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Rochester Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Canton","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Dearborn","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Westland","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Taylor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Lansing","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Grand Rapids","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Flint","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Clinton Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Shelby Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Utica","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Madison Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Roseville","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Saint Clair Shores","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Chesterfield","containedInPlace":{"@type":"State","name":"Michigan"}}],
+    "priceRange": "$$",
+    "openingHoursSpecification": [{"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "18:00"}],
+    "sameAs":[],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"7","bestRating":"5","worstRating":"1"}
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Majesty Web Design Portfolio",
+    "description": "Websites built for Michigan small businesses with real growth results.",
+    "itemListElement": [
+      {"@type": "ListItem","position": 1,"name": "Budget Flooring Center","url": "https://www.budgetflooringcenter.com","description": "Flooring retailer website with quote form and local SEO"},
+      {"@type": "ListItem","position": 2,"name": "Mod Mortgage Loans","url": "https://www.modmortgageloans.com","description": "Mortgage lending site with purchase and refinance flows"},
+      {"@type": "ListItem","position": 3,"name": "Boogeyman Wildlife Control","url": "https://www.boogeymanwildlifecontrol.com","description": "Wildlife removal service with inspection scheduling"}
+    ]
+  }
+  ]
+  </script>
+
+  <!-- SEO: BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.majestywebdesign.com/"},{"@type":"ListItem","position":2,"name":"Portfolio","item":"https://www.majestywebdesign.com/portfolio.html"}]}
+  </script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRBPFDXPTJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VRBPFDXPTJ');
+  </script>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="services.html">Services <span class="drop-icon">▾</span></a><ul class="dropdown-menu"><li><a href="services.html">All Services</a></li><li><a href="seo.html">SEO Services</a></li><li><a href="custom-websites.html">Custom Websites</a></li><li><a href="industries.html">Industries We Serve</a></li></ul></li>
+      <li class="nav-dropdown"><a href="pricing.html">Pricing <span class="drop-icon">▾</span></a><ul class="dropdown-menu"><li><a href="pricing.html">Pricing Overview</a></li><li><a href="packages.html">Website Packages</a></li><li><a href="monthly-plans.html">Monthly Plans</a></li></ul></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="blog.html">Resources</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions"><a href="tel:+16169157546" class="btn btn-outline btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 4.69 12 19.79 19.79 0 0 1 1.2 3.18 2 2 0 0 1 3.18 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.82 5.82l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16l-.36-.07"/></svg> Call Us</a><a href="contact.html" class="btn btn-primary btn-sm">Get Started</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="pricing.html">Pricing</a><a href="industries.html">Industries</a><a href="blog.html">Resources</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><div class="mobile-cta"><a href="contact.html" class="btn btn-primary w-full" style="justify-content:center">Get Your Free Quote</a></div></div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-bg"><div class="hero-orb hero-orb-1" style="opacity:0.25"></div><div class="hero-orb hero-orb-2" style="opacity:0.2"></div><div class="hero-grid"></div></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span>Portfolio</span></nav>
+      <div class="section-label" style="justify-content:center">Our Work</div>
+      <h1 class="section-title reveal" style="font-size:clamp(2.25rem,5vw,3.5rem);margin-bottom:1.25rem">Websites That Generate<br /><span class="text-gradient">Real Business Results</span></h1>
+      <p class="section-subtitle mx-auto reveal delay-1">Every project we take on has one goal: help our clients grow. Here's the proof.</p>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="live">Live Clients</button>
+        <button class="filter-btn" data-filter="available">Open Spots</button>
+      </div>
+
+      <div class="portfolio-grid-lg">
+
+        <!-- ── REAL CLIENT: Budget Flooring ── -->
+        <div class="portfolio-item-lg reveal delay-1" data-category="live">
+          <div class="portfolio-thumb" style="background:#0a0a12">
+            <img loading="lazy" class="portfolio-thumb-img" src="images/portfolio/flooring.jpg" alt="Budget Flooring Center website screenshot" />
+          </div>
+          <div class="portfolio-info">
+            <div class="live-badge">Live Client</div>
+            <div class="portfolio-tag" style="margin-bottom:0.75rem">Contractor</div>
+            <h3>Budget Flooring Center</h3>
+            <p>Full website with product showcase, free quote form, and local SEO for Southeast Michigan flooring searches.</p>
+            <div class="portfolio-info-row">
+              <div class="result-pill">Live &amp; Ranking</div>
+              <a href="https://www.budgetflooringcenter.com" target="_blank" rel="noopener" class="visit-link">Visit Site ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── REAL CLIENT: Mod Mortgage ── -->
+        <div class="portfolio-item-lg reveal delay-2" data-category="live">
+          <div class="portfolio-thumb" style="background:#0a0a12">
+            <img loading="lazy" class="portfolio-thumb-img" src="images/portfolio/mortgage.jpg" alt="Mod Mortgage Loans website screenshot" />
+          </div>
+          <div class="portfolio-info">
+            <div class="live-badge">Live Client</div>
+            <div class="portfolio-tag" style="margin-bottom:0.75rem;background:rgba(22,163,74,0.1);color:#4ADE80;border-color:rgba(22,163,74,0.2)">Finance</div>
+            <h3>Mod Mortgage Loans</h3>
+            <p>Clean, conversion-focused mortgage site with purchase &amp; refinance flows, calculator, and NMLS compliance.</p>
+            <div class="portfolio-info-row">
+              <div class="result-pill">Live &amp; Converting</div>
+              <a href="https://www.modmortgageloans.com" target="_blank" rel="noopener" class="visit-link">Visit Site ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── REAL CLIENT: Boogeyman Wildlife Control ── -->
+        <div class="portfolio-item-lg reveal delay-3" data-category="live">
+          <div class="portfolio-thumb" style="background:#0a0a12">
+            <img loading="lazy" class="portfolio-thumb-img" src="images/portfolio/wildlife.jpg" alt="Boogeyman Wildlife Control website screenshot" />
+          </div>
+          <div class="portfolio-info">
+            <div class="live-badge">Live Client</div>
+            <div class="portfolio-tag" style="margin-bottom:0.75rem;background:rgba(124,58,237,0.1);color:#A78BFA;border-color:rgba(124,58,237,0.2)">Contractor</div>
+            <h3>Boogeyman Wildlife Control</h3>
+            <p>Bold, memorable brand site with service area pages, inspection scheduling, and humane removal messaging.</p>
+            <div class="portfolio-info-row">
+              <div class="result-pill">Live &amp; Active</div>
+              <a href="https://www.boogeymanwildlifecontrol.com" target="_blank" rel="noopener" class="visit-link">Visit Site ↗</a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ── OPEN SPOT 1: Contractor ── -->
+        <div class="portfolio-item-lg reveal delay-1" data-category="available">
+          <div class="portfolio-thumb" style="background:rgba(0,212,255,0.04);border:2px dashed rgba(0,212,255,0.25);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem">
+            <div style="width:64px;height:64px;border-radius:50%;border:2px dashed rgba(0,212,255,0.4);display:flex;align-items:center;justify-content:center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(0,212,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            </div>
+            <span style="font-size:0.8125rem;color:rgba(0,212,255,0.5);font-weight:600;letter-spacing:0.05em;text-transform:uppercase">Spot Available</span>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-tag" style="margin-bottom:0.75rem;background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.2)">Contractors &amp; Trades</div>
+            <h3 style="color:rgba(255,255,255,0.7)">Your Business Here</h3>
+            <p>Plumbers, roofers, electricians, landscapers — if you're in the trades and need more leads, this could be your site.</p>
+            <a href="index.html#free-preview" class="btn btn-primary" style="margin-top:0.5rem">Claim Your Free Preview →</a>
+          </div>
+        </div>
+
+        <!-- ── OPEN SPOT 2: Service Business ── -->
+        <div class="portfolio-item-lg reveal delay-2" data-category="available">
+          <div class="portfolio-thumb" style="background:rgba(139,92,246,0.04);border:2px dashed rgba(139,92,246,0.25);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem">
+            <div style="width:64px;height:64px;border-radius:50%;border:2px dashed rgba(139,92,246,0.4);display:flex;align-items:center;justify-content:center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(139,92,246,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            </div>
+            <span style="font-size:0.8125rem;color:rgba(139,92,246,0.6);font-weight:600;letter-spacing:0.05em;text-transform:uppercase">Spot Available</span>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-tag" style="margin-bottom:0.75rem;background:rgba(139,92,246,0.08);color:#A78BFA;border-color:rgba(139,92,246,0.2)">Service Businesses</div>
+            <h3 style="color:rgba(255,255,255,0.7)">Your Business Here</h3>
+            <p>Salons, spas, gyms, consultants — if customers search for your service online, a great website turns clicks into bookings.</p>
+            <a href="index.html#free-preview" class="btn btn-primary" style="margin-top:0.5rem">Claim Your Free Preview →</a>
+          </div>
+        </div>
+
+        <!-- ── OPEN SPOT 3: Any Industry ── -->
+        <div class="portfolio-item-lg reveal delay-3" data-category="available">
+          <div class="portfolio-thumb" style="background:rgba(16,185,129,0.04);border:2px dashed rgba(16,185,129,0.25);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem">
+            <div style="width:64px;height:64px;border-radius:50%;border:2px dashed rgba(16,185,129,0.4);display:flex;align-items:center;justify-content:center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(16,185,129,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            </div>
+            <span style="font-size:0.8125rem;color:rgba(16,185,129,0.5);font-weight:600;letter-spacing:0.05em;text-transform:uppercase">Spot Available</span>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-tag" style="margin-bottom:0.75rem;background:rgba(16,185,129,0.08);color:#34D399;border-color:rgba(16,185,129,0.2)">Any Industry</div>
+            <h3 style="color:rgba(255,255,255,0.7)">Your Business Here</h3>
+            <p>Restaurants, real estate, legal, retail — whatever your industry, if you need a website that actually generates leads, let's talk.</p>
+            <a href="index.html#free-preview" class="btn btn-primary" style="margin-top:0.5rem">Claim Your Free Preview →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-section reveal">
+        <div class="section-label" style="justify-content:center">Your turn</div>
+        <h2 class="section-title">Want Your Business<br /><span class="text-gradient">In Our Portfolio?</span></h2>
+        <p class="section-subtitle">Let's build a website that generates real results. Free strategy consultation, no commitment.</p>
+        <div class="cta-actions mt-8">
+          <a href="contact.html" class="btn btn-primary btn-lg">Start My Project</a>
+          <a href="pricing.html" class="btn btn-outline btn-lg">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" style="height:36px;width:auto" /></a><p>Michigan's trusted web design agency helping small businesses grow online.</p></div><div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="services.html">Web Design</a></li><li><a href="seo.html">SEO Services</a></li><li><a href="custom-websites.html">Custom Websites</a></li><li><a href="monthly-plans.html">Monthly Plans</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul class="footer-links"><li><a href="mailto:majestywebdesign@gmail.com">majestywebdesign@gmail.com</a></li><li><a href="tel:+16169157546">(616) 915-7546</a></li><li style="margin-top:1rem"><a href="contact.html" class="btn btn-primary btn-sm">Get Free Quote</a></li></ul></div></div><div class="footer-bottom"><p class="footer-bottom-text">© 2026 Majesty Web Design. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div></div></footer>
+<script src="js/main.js" defer></script>
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" aria-hidden="true"></div>
+
+  <!-- Crisp Live Chat -->
+  <script type="text/javascript">
+    window.$crisp=[];
+    window.CRISP_WEBSITE_ID="b58f30dd-bcfd-433a-92f8-27cb779f84d4";
+    (function(){
+      var d=document,s=d.createElement("script");
+      s.src="https://client.crisp.chat/l.js";
+      s.async=1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
+
+</body>
+</html>

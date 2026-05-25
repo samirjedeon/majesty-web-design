@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Industries We Serve — Majesty Web Design | Websites for Every Business</title>
+  <meta name="description" content="We build websites for contractors, restaurants, salons, gyms, law firms, real estate agents, and more. See how we serve your industry." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .industry-detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .industry-detail-card { background: var(--bg-card); border: 1px solid var(--bg-glass-border); border-radius: 1.25rem; padding: 2rem; transition: all var(--ease-base); display: flex; flex-direction: column; gap: 1rem; }
+    .industry-detail-card:hover { border-color: rgba(0,212,255,0.2); transform: translateY(-4px); box-shadow: var(--shadow-cyan); }
+    .industry-header { display: flex; align-items: center; gap: 1rem; }
+    .industry-emoji { width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.15);border-radius:0.75rem;flex-shrink:0;color:var(--cyan); }
+    .industry-detail-card h3 { font-size: 1.125rem; font-weight: 700; }
+    .industry-detail-card p { font-size: 0.875rem; color: var(--gray-400); line-height: 1.65; flex: 1; }
+    .industry-features { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .industry-feature-tag { font-size: 0.75rem; padding: 0.25rem 0.625rem; background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.15); border-radius: 2rem; color: var(--cyan); }
+    @media (max-width: 768px) { .industry-detail-grid { grid-template-columns: 1fr; } }
+  </style>
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://www.majestywebdesign.com/industries.html" />
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.majestywebdesign.com/industries.html" />
+  <meta property="og:title" content="Industries We Serve — Websites for Michigan Businesses | Majesty Web Design" />
+  <meta property="og:description" content="We build websites for contractors, restaurants, salons, gyms, law firms, real estate agents & more across Michigan. See your industry." />
+  <meta property="og:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <meta property="og:site_name" content="Majesty Web Design" />
+  <meta property="og:locale" content="en_US" />
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Industries We Serve — Websites for Michigan Businesses | Majesty Web Design" />
+  <meta name="twitter:description" content="We build websites for contractors, restaurants, salons, gyms, law firms, real estate agents & more across Michigan. See your industry." />
+  <meta name="twitter:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <!-- SEO: Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://www.majestywebdesign.com/#business",
+    "name": "Majesty Web Design",
+    "description": "Michigan's premier web design agency helping small businesses grow online with affordable monthly website packages.",
+    "url": "https://www.majestywebdesign.com",
+    "logo": "https://www.majestywebdesign.com/images/logo.webp",
+    "image": "https://www.majestywebdesign.com/images/logo.webp",
+    "telephone": "+16169157546",
+    "email": "majestywebdesign@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
+    "areaServed":[{"@type":"State","name":"Michigan"},{"@type":"City","name":"Detroit","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Warren","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Sterling Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Troy","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Southfield","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Royal Oak","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Farmington Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Livonia","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Novi","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Ann Arbor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Macomb","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Pontiac","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Rochester Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Canton","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Dearborn","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Westland","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Taylor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Lansing","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Grand Rapids","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Flint","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Clinton Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Shelby Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Utica","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Madison Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Roseville","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Saint Clair Shores","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Chesterfield","containedInPlace":{"@type":"State","name":"Michigan"}}],
+    "priceRange": "$$",
+    "openingHoursSpecification": [{"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "18:00"}],
+    "sameAs":[],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"7","bestRating":"5","worstRating":"1"}
+  }
+  ]
+  </script>
+
+  <!-- SEO: BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.majestywebdesign.com/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://www.majestywebdesign.com/industries.html"}]}
+  </script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRBPFDXPTJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VRBPFDXPTJ');
+  </script>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="services.html" class="active">Services <span class="drop-icon">▾</span></a><ul class="dropdown-menu"><li><a href="services.html">All Services</a></li><li><a href="seo.html">SEO Services</a></li><li><a href="custom-websites.html">Custom Websites</a></li><li><a href="industries.html">Industries We Serve</a></li></ul></li>
+      <li class="nav-dropdown"><a href="pricing.html">Pricing <span class="drop-icon">▾</span></a><ul class="dropdown-menu"><li><a href="pricing.html">Pricing Overview</a></li><li><a href="packages.html">Website Packages</a></li><li><a href="monthly-plans.html">Monthly Plans</a></li></ul></li>
+      <li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="blog.html">Resources</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions"><a href="tel:+16169157546" class="btn btn-outline btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 4.69 12 19.79 19.79 0 0 1 1.2 3.18 2 2 0 0 1 3.18 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.82 5.82l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16l-.36-.07"/></svg> Call Us</a><a href="contact.html" class="btn btn-primary btn-sm">Get Started</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="seo.html">SEO Services</a><a href="custom-websites.html">Custom Websites</a><a href="portfolio.html">Portfolio</a><a href="pricing.html">Pricing</a><a href="industries.html">Industries</a><a href="blog.html">Resources</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><div class="mobile-cta"><a href="contact.html" class="btn btn-primary w-full" style="justify-content:center">Get Your Free Quote</a></div></div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-bg"><div class="hero-orb hero-orb-1" style="opacity:0.25"></div><div class="hero-orb hero-orb-2" style="opacity:0.2"></div><div class="hero-grid"></div></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><a href="services.html">Services</a><span class="sep">›</span><span>Industries</span></nav>
+      <div class="section-label" style="justify-content:center">Industries We Serve</div>
+      <h1 class="section-title reveal" style="font-size:clamp(2.25rem,5vw,3.5rem);margin-bottom:1.25rem">We Know Your Industry<br /><span class="text-gradient">Inside and Out</span></h1>
+      <p class="section-subtitle mx-auto reveal delay-1">We've built websites for 50+ industries. We understand what your customers are looking for and how to convert them into clients for your business.</p>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES QUICK LIST -->
+  <section class="section">
+    <div class="container">
+      <div class="industries-grid reveal">
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.5 8.5a2.12 2.12 0 0 1-3-3L12 9"/><path d="M17.64 15L22 10.64"/><path d="m20.91 11.7-1.25-1.25c.16-.26.25-.56.25-.87v-.79l-3.14-3.14a1 1 0 0 0-1.41 0l-4.93 4.93a1 1 0 0 0 0 1.41l3.14 3.14h.79c.31 0 .61-.09.87-.25L14 15"/></svg></span><h3>Contractors</h3></div>
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></span><h3>Restaurants</h3></div>
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></span><h3>Salons &amp; Spas</h3></div>
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span><h3>Fitness &amp; Gyms</h3></div>
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><h3>Real Estate</h3></div>
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><h3>Law Firms</h3></div>
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><h3>Healthcare</h3></div>
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><h3>Auto Services</h3></div>
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span><h3>Retail &amp; E-Commerce</h3></div>
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 22"/><path d="M17 8s4-1.5 5-6c0 0-5 0-11 5.5S5 16.5 3.82 22"/></svg></span><h3>Landscaping</h3></div>
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span><h3>Pet Services</h3></div>
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><h3>Education</h3></div>
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span><h3>Tech &amp; IT</h3></div>
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span><h3>Photography</h3></div>
+        <div class="industry-card"><span class="industry-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span><h3>Entertainment</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRY DETAIL CARDS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="section-label reveal">Industry Expertise</div>
+        <h2 class="section-title reveal delay-1">Websites Built for<br /><span class="text-gradient">Your Specific Industry</span></h2>
+        <p class="section-subtitle mx-auto reveal delay-2">We don't build generic websites. Every site is tailored to what your specific industry and customers need.</p>
+      </div>
+      <div class="industry-detail-grid">
+        <div class="industry-detail-card reveal delay-1">
+          <div class="industry-header"><div class="industry-emoji"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.5 8.5a2.12 2.12 0 0 1-3-3L12 9"/><path d="M17.64 15L22 10.64"/><path d="m20.91 11.7-1.25-1.25c.16-.26.25-.56.25-.87v-.79l-3.14-3.14a1 1 0 0 0-1.41 0l-4.93 4.93a1 1 0 0 0 0 1.41l3.14 3.14h.79c.31 0 .61-.09.87-.25L14 15"/></svg></div><h3>Home Services &amp; Contractors</h3></div>
+          <p>Plumbers, electricians, HVAC, roofers, and general contractors. We build websites that capture leads from homeowners actively searching for your services.</p>
+          <div class="industry-features"><span class="industry-feature-tag">Quote Request Forms</span><span class="industry-feature-tag">Service Area Maps</span><span class="industry-feature-tag">Photo Galleries</span><span class="industry-feature-tag">Review Integration</span></div>
+        </div>
+        <div class="industry-detail-card reveal delay-2">
+          <div class="industry-header"><div class="industry-emoji"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></div><h3>Restaurants &amp; Food Service</h3></div>
+          <p>Full-service restaurants, fast casual, bakeries, and caterers. We make your food look incredible online and drive reservations and orders.</p>
+          <div class="industry-features"><span class="industry-feature-tag">Online Menu</span><span class="industry-feature-tag">Reservation System</span><span class="industry-feature-tag">Online Ordering</span><span class="industry-feature-tag">Food Photography</span></div>
+        </div>
+        <div class="industry-detail-card reveal delay-3">
+          <div class="industry-header"><div class="industry-emoji"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div><h3>Beauty, Salons &amp; Wellness</h3></div>
+          <p>Hair salons, nail studios, spas, and wellness centers. We build elegant sites that communicate your brand and fill your appointment books.</p>
+          <div class="industry-features"><span class="industry-feature-tag">Online Booking</span><span class="industry-feature-tag">Service Menus</span><span class="industry-feature-tag">Instagram Gallery</span><span class="industry-feature-tag">Gift Cards</span></div>
+        </div>
+        <div class="industry-detail-card reveal delay-1">
+          <div class="industry-header"><div class="industry-emoji"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><h3>Law Firms &amp; Legal</h3></div>
+          <p>Attorneys and law firms need websites that communicate authority and trust. We build sites that convert visitors into consultation requests.</p>
+          <div class="industry-features"><span class="industry-feature-tag">Practice Areas</span><span class="industry-feature-tag">Attorney Profiles</span><span class="industry-feature-tag">Case Results</span><span class="industry-feature-tag">Consultation Forms</span></div>
+        </div>
+        <div class="industry-detail-card reveal delay-2">
+          <div class="industry-header"><div class="industry-emoji"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>Real Estate</h3></div>
+          <p>Real estate agents and brokerages need a site that builds credibility and generates buyer/seller leads. We deliver both.</p>
+          <div class="industry-features"><span class="industry-feature-tag">Property Listings</span><span class="industry-feature-tag">Agent Profiles</span><span class="industry-feature-tag">Market Stats</span><span class="industry-feature-tag">Lead Capture</span></div>
+        </div>
+        <div class="industry-detail-card reveal delay-3">
+          <div class="industry-header"><div class="industry-emoji"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><h3>Medical &amp; Healthcare</h3></div>
+          <p>Clinics, dentists, chiropractors, and specialists. HIPAA-conscious design that builds patient trust and drives appointment bookings.</p>
+          <div class="industry-features"><span class="industry-feature-tag">Online Scheduling</span><span class="industry-feature-tag">Provider Profiles</span><span class="industry-feature-tag">Patient Forms</span><span class="industry-feature-tag">Insurance Info</span></div>
+        </div>
+        <div class="industry-detail-card reveal delay-1">
+          <div class="industry-header"><div class="industry-emoji"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Fitness &amp; Sports</h3></div>
+          <p>Gyms, personal trainers, yoga studios, and sports facilities. We design high-energy sites that convert visitors into paying members.</p>
+          <div class="industry-features"><span class="industry-feature-tag">Class Schedules</span><span class="industry-feature-tag">Membership Signup</span><span class="industry-feature-tag">Trainer Profiles</span><span class="industry-feature-tag">Free Trial CTAs</span></div>
+        </div>
+        <div class="industry-detail-card reveal delay-2">
+          <div class="industry-header"><div class="industry-emoji"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3>Auto Services</h3></div>
+          <p>Auto repair, detailing, dealerships, and specialty shops. We build trust-first sites that turn online searches into in-person visits.</p>
+          <div class="industry-features"><span class="industry-feature-tag">Service Menus</span><span class="industry-feature-tag">Online Scheduling</span><span class="industry-feature-tag">Inventory Listings</span><span class="industry-feature-tag">Reviews</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-section reveal">
+        <div class="section-label" style="justify-content:center">Don't see your industry?</div>
+        <h2 class="section-title">We Build Websites for<br /><span class="text-gradient">Any Business Type</span></h2>
+        <p class="section-subtitle">If your industry isn't listed, we've almost certainly worked in it or can quickly get up to speed. Let's talk about your specific needs.</p>
+        <div class="cta-actions mt-8">
+          <a href="contact.html" class="btn btn-primary btn-lg">Let's Discuss Your Industry</a>
+          <a href="portfolio.html" class="btn btn-outline btn-lg">View Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" style="height:36px;width:auto" /></a><p>Michigan's trusted web design agency helping small businesses grow online.</p></div><div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="services.html">Web Design</a></li><li><a href="seo.html">SEO Services</a></li><li><a href="custom-websites.html">Custom Websites</a></li><li><a href="monthly-plans.html">Monthly Plans</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul class="footer-links"><li><a href="mailto:majestywebdesign@gmail.com">majestywebdesign@gmail.com</a></li><li><a href="tel:+16169157546">(616) 915-7546</a></li><li style="margin-top:1rem"><a href="contact.html" class="btn btn-primary btn-sm">Get Free Quote</a></li></ul></div></div><div class="footer-bottom"><p class="footer-bottom-text">© 2026 Majesty Web Design. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div></div></footer>
+<script src="js/main.js" defer></script>
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" aria-hidden="true"></div>
+
+  <!-- Crisp Live Chat -->
+  <script type="text/javascript">
+    window.$crisp=[];
+    window.CRISP_WEBSITE_ID="b58f30dd-bcfd-433a-92f8-27cb779f84d4";
+    (function(){
+      var d=document,s=d.createElement("script");
+      s.src="https://client.crisp.chat/l.js";
+      s.async=1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
+
+</body>
+</html>

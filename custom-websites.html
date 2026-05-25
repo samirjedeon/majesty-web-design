@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Websites — Majesty Web Design | Fully Custom Web Development</title>
+  <meta name="description" content="Need something beyond standard packages? We build fully custom websites with unique functionality, integrations, and design tailored to your exact needs." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .custom-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .custom-feature { padding: 2rem; background: var(--bg-card); border: 1px solid var(--bg-glass-border); border-radius: 1.25rem; transition: all var(--ease-base); }
+    .custom-feature:hover { border-color: rgba(0,212,255,0.2); transform: translateY(-4px); }
+    .custom-feature-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .custom-feature h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .custom-feature p { font-size: 0.875rem; color: var(--gray-400); line-height: 1.65; }
+    .use-cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .use-case { display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--bg-glass-border); border-radius: 1rem; }
+    .use-case-number { width: 36px; height: 36px; border-radius: 0.5rem; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.875rem; flex-shrink: 0; }
+    .use-case h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.375rem; }
+    .use-case p { font-size: 0.875rem; color: var(--gray-400); line-height: 1.6; }
+    @media (max-width: 900px) { .custom-features { grid-template-columns: 1fr 1fr; } .use-cases { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .custom-features { grid-template-columns: 1fr; } }
+  </style>
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://www.majestywebdesign.com/custom-websites.html" />
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.majestywebdesign.com/custom-websites.html" />
+  <meta property="og:title" content="Custom Website Design Michigan — Majesty Web Design" />
+  <meta property="og:description" content="Fully custom websites built from scratch for Michigan businesses. Unique design, custom functionality, and integrations tailored to your exact needs." />
+  <meta property="og:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <meta property="og:site_name" content="Majesty Web Design" />
+  <meta property="og:locale" content="en_US" />
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Custom Website Design Michigan — Majesty Web Design" />
+  <meta name="twitter:description" content="Fully custom websites built from scratch for Michigan businesses. Unique design, custom functionality, and integrations tailored to your exact needs." />
+  <meta name="twitter:image" content="https://www.majestywebdesign.com/images/logo.webp" />
+  <!-- SEO: Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://www.majestywebdesign.com/#business",
+    "name": "Majesty Web Design",
+    "description": "Michigan's premier web design agency helping small businesses grow online with affordable monthly website packages.",
+    "url": "https://www.majestywebdesign.com",
+    "logo": "https://www.majestywebdesign.com/images/logo.webp",
+    "image": "https://www.majestywebdesign.com/images/logo.webp",
+    "telephone": "+16169157546",
+    "email": "majestywebdesign@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
+    "areaServed":[{"@type":"State","name":"Michigan"},{"@type":"City","name":"Detroit","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Warren","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Sterling Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Troy","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Southfield","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Royal Oak","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Farmington Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Livonia","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Novi","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Ann Arbor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Macomb","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Pontiac","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Rochester Hills","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Canton","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Dearborn","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Westland","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Taylor","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Lansing","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Grand Rapids","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Flint","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Clinton Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Shelby Township","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Utica","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Madison Heights","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Roseville","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Saint Clair Shores","containedInPlace":{"@type":"State","name":"Michigan"}},{"@type":"City","name":"Chesterfield","containedInPlace":{"@type":"State","name":"Michigan"}}],
+    "priceRange": "$$",
+    "openingHoursSpecification": [{"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "18:00"}],
+    "sameAs":[],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"7","bestRating":"5","worstRating":"1"}
+  }
+  ]
+  </script>
+
+  <!-- SEO: BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.majestywebdesign.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.majestywebdesign.com/services.html"},{"@type":"ListItem","position":3,"name":"Custom Websites","item":"https://www.majestywebdesign.com/custom-websites.html"}]}
+  </script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRBPFDXPTJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VRBPFDXPTJ');
+  </script>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="services.html" class="active">Services <span class="drop-icon">▾</span></a><ul class="dropdown-menu"><li><a href="services.html">All Services</a></li><li><a href="seo.html">SEO Services</a></li><li><a href="custom-websites.html">Custom Websites</a></li><li><a href="industries.html">Industries We Serve</a></li></ul></li>
+      <li class="nav-dropdown"><a href="pricing.html">Pricing <span class="drop-icon">▾</span></a><ul class="dropdown-menu"><li><a href="pricing.html">Pricing Overview</a></li><li><a href="packages.html">Website Packages</a></li><li><a href="monthly-plans.html">Monthly Plans</a></li></ul></li>
+      <li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="blog.html">Resources</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions"><a href="tel:+16169157546" class="btn btn-outline btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 4.69 12 19.79 19.79 0 0 1 1.2 3.18 2 2 0 0 1 3.18 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.82 5.82l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16l-.36-.07"/></svg> Call Us</a><a href="contact.html" class="btn btn-primary btn-sm">Get Started</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="seo.html">SEO Services</a><a href="custom-websites.html">Custom Websites</a><a href="portfolio.html">Portfolio</a><a href="pricing.html">Pricing</a><a href="industries.html">Industries</a><a href="blog.html">Resources</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><div class="mobile-cta"><a href="contact.html" class="btn btn-primary w-full" style="justify-content:center">Get Your Free Quote</a></div></div>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-bg"><div class="hero-orb hero-orb-1" style="opacity:0.25"></div><div class="hero-orb hero-orb-2" style="opacity:0.2"></div><div class="hero-grid"></div></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><a href="services.html">Services</a><span class="sep">›</span><span>Custom Websites</span></nav>
+      <div class="section-label" style="justify-content:center">Custom Development</div>
+      <h1 class="section-title reveal" style="font-size:clamp(2.25rem,5vw,3.5rem);margin-bottom:1.25rem">When You Need More Than<br /><span class="text-gradient">A Standard Website</span></h1>
+      <p class="section-subtitle mx-auto reveal delay-1">Some businesses need unique functionality, complex integrations, or a completely bespoke design. We build those too — with the same quality and care as everything else we do.</p>
+    </div>
+  </section>
+
+  <!-- CUSTOM FEATURES -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="section-label reveal">What We Can Build</div>
+        <h2 class="section-title reveal delay-1">Custom Features &amp;<br /><span class="text-gradient">Functionality</span></h2>
+      </div>
+      <div class="custom-features">
+        <div class="custom-feature reveal delay-1"><div class="custom-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><h3>E-Commerce Stores</h3><p>Full online stores with product catalogs, shopping carts, secure checkout, inventory management, and payment processing.</p></div>
+        <div class="custom-feature reveal delay-2"><div class="custom-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h3>Booking &amp; Scheduling</h3><p>Advanced appointment scheduling systems with calendar sync, automated reminders, deposits, and staff management.</p></div>
+        <div class="custom-feature reveal delay-3"><div class="custom-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><h3>API Integrations</h3><p>Connect your website to CRMs, email platforms, payment processors, social media, and any third-party service via API.</p></div>
+        <div class="custom-feature reveal delay-1"><div class="custom-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Member Portals</h3><p>Password-protected areas where customers can log in, access content, manage subscriptions, or view their account history.</p></div>
+        <div class="custom-feature reveal delay-2"><div class="custom-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></div><h3>Custom Forms &amp; Calculators</h3><p>Multi-step intake forms, quote calculators, assessment tools, and any form logic your business needs.</p></div>
+        <div class="custom-feature reveal delay-3"><div class="custom-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div><h3>Interactive Maps &amp; Directories</h3><p>Store locators, service area maps, interactive directories, and custom mapping solutions for location-based businesses.</p></div>
+        <div class="custom-feature reveal delay-1"><div class="custom-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div><h3>Dashboards &amp; Portals</h3><p>Custom admin dashboards, client portals, reporting interfaces, and internal tools built into your website.</p></div>
+        <div class="custom-feature reveal delay-2"><div class="custom-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3>Advanced Search &amp; Filters</h3><p>Sophisticated search functionality with filters, sorting, faceted navigation — perfect for directories, listings, and catalogs.</p></div>
+        <div class="custom-feature reveal delay-3"><div class="custom-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><h3>Progressive Web Apps</h3><p>App-like experiences that work offline, can be added to home screens, and provide native app functionality without the App Store.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="section-label reveal">Who It's For</div>
+        <h2 class="section-title reveal delay-1">You Might Need a Custom Site<br /><span class="text-gradient">If You're In These Situations</span></h2>
+      </div>
+      <div class="use-cases">
+        <div class="use-case reveal delay-1"><div class="use-case-number">1</div><div><h3>You outgrew your current website</h3><p>Your business has evolved and your website can no longer keep up with your products, services, or customer volume.</p></div></div>
+        <div class="use-case reveal delay-2"><div class="use-case-number">2</div><div><h3>You need complex integrations</h3><p>You need your website to connect with your CRM, inventory system, ERP, or other business software.</p></div></div>
+        <div class="use-case reveal delay-3"><div class="use-case-number">3</div><div><h3>You have a unique business model</h3><p>Marketplace, subscription service, SaaS product, or any model that requires custom workflow and logic.</p></div></div>
+        <div class="use-case reveal delay-1"><div class="use-case-number">4</div><div><h3>You want to stand out visually</h3><p>You want a completely unique, award-level design that no competitor could replicate — a true reflection of your brand.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="section-label reveal">How We Work</div>
+        <h2 class="section-title reveal delay-1">Our Custom Build <span class="text-gradient">Process</span></h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal delay-1"><div class="process-step-number">01</div><h3>Discovery</h3><p>We have a deep-dive session to map out your requirements, user flows, integrations, and technical architecture.</p></div>
+        <div class="process-step reveal delay-2"><div class="process-step-number">02</div><h3>Design</h3><p>We design wireframes and high-fidelity mockups for your review before any code is written.</p></div>
+        <div class="process-step reveal delay-3"><div class="process-step-number">03</div><h3>Development</h3><p>We build your site with clean, scalable code — testing every feature and integration before delivery.</p></div>
+        <div class="process-step reveal delay-4"><div class="process-step-number">04</div><h3>Launch &amp; Support</h3><p>After launch, we provide ongoing maintenance, updates, and support to keep your custom site running perfectly.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cta-section reveal">
+        <div class="section-label" style="justify-content:center">Let's build it</div>
+        <h2 class="section-title">Tell Us What You Need.<br /><span class="text-gradient">We'll Figure Out How to Build It.</span></h2>
+        <p class="section-subtitle">Custom projects start with a free discovery call. No commitment, no pressure — just a conversation about what's possible.</p>
+        <div class="cta-actions mt-8">
+          <a href="contact.html" class="btn btn-primary btn-lg">Start My Custom Project</a>
+          <a href="portfolio.html" class="btn btn-outline btn-lg">View Our Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html"><img loading="lazy" src="images/logo.webp" alt="Majesty Web Design" style="height:36px;width:auto" /></a><p>Michigan's trusted web design agency helping small businesses grow online.</p></div><div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="services.html">Web Design</a></li><li><a href="seo.html">SEO Services</a></li><li><a href="custom-websites.html">Custom Websites</a></li><li><a href="monthly-plans.html">Monthly Plans</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul class="footer-links"><li><a href="mailto:majestywebdesign@gmail.com">majestywebdesign@gmail.com</a></li><li><a href="tel:+16169157546">(616) 915-7546</a></li><li style="margin-top:1rem"><a href="contact.html" class="btn btn-primary btn-sm">Get Free Quote</a></li></ul></div></div><div class="footer-bottom"><p class="footer-bottom-text">© 2026 Majesty Web Design. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div></div></footer>
+<script src="js/main.js" defer></script>
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" aria-hidden="true"></div>
+
+  <!-- Crisp Live Chat -->
+  <script type="text/javascript">
+    window.$crisp=[];
+    window.CRISP_WEBSITE_ID="b58f30dd-bcfd-433a-92f8-27cb779f84d4";
+    (function(){
+      var d=document,s=d.createElement("script");
+      s.src="https://client.crisp.chat/l.js";
+      s.async=1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
+
+</body>
+</html>
