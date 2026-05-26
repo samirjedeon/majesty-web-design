@@ -1767,14 +1767,21 @@ h1, h2, h3, h4, h5, h6 {
 /* ================================================
    23. SCROLL ANIMATION CLASSES
    ================================================ */
+/* CSS fallback: reveal content after 2.5s even if JS hasn't loaded */
+@keyframes reveal-fallback    { to { opacity:1; transform:translateY(0); } }
+@keyframes reveal-left-fb     { to { opacity:1; transform:translateX(0); } }
+@keyframes reveal-right-fb    { to { opacity:1; transform:translateX(0); } }
+
 .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
               transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: reveal-fallback 0.7s cubic-bezier(0.4, 0, 0.2, 1) 2.5s both;
 }
 
 .reveal.visible {
+  animation: none;
   opacity: 1;
   transform: translateY(0);
 }
@@ -1784,9 +1791,11 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(-30px);
   transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
               transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: reveal-left-fb 0.7s cubic-bezier(0.4, 0, 0.2, 1) 2.5s both;
 }
 
 .reveal-left.visible {
+  animation: none;
   opacity: 1;
   transform: translateX(0);
 }
@@ -1796,9 +1805,11 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(30px);
   transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
               transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: reveal-right-fb 0.7s cubic-bezier(0.4, 0, 0.2, 1) 2.5s both;
 }
 
 .reveal-right.visible {
+  animation: none;
   opacity: 1;
   transform: translateX(0);
 }

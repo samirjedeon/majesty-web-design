@@ -524,8 +524,12 @@
 
   window.addEventListener('resize', () => { resize(); }, { passive: true });
 
-  init();
-  loop();
+  // Defer particle init until browser is idle — keeps first paint snappy
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(function () { init(); loop(); }, { timeout: 1500 });
+  } else {
+    setTimeout(function () { init(); loop(); }, 200);
+  }
 })();
 
 /* ================================================
