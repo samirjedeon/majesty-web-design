@@ -115,6 +115,30 @@
       }, { passive: true });
     }
 
+    // Re-init pricing toggle
+    var pricingToggle = document.getElementById('pricing-toggle');
+    if (pricingToggle) {
+      var monthlyLabel = document.getElementById('toggle-label-monthly');
+      var annualLabel  = document.getElementById('toggle-label-annual');
+      pricingToggle.addEventListener('change', function () {
+        var isAnnual = pricingToggle.checked;
+        document.querySelectorAll('[data-monthly]').forEach(function (el) {
+          var m = parseInt(el.dataset.monthly, 10);
+          el.textContent = isAnnual ? Math.round(m * 0.8) : m;
+        });
+        document.querySelectorAll('.pricing-period').forEach(function (el) {
+          el.textContent = isAnnual ? '/mo (billed annually)' : '/mo';
+        });
+        document.querySelectorAll('.pricing-billed-note').forEach(function (el) {
+          el.style.display = isAnnual ? 'block' : 'none';
+          var t = el.querySelector('.annual-total');
+          if (t) t.textContent = (Math.round(parseInt(t.dataset.monthly, 10) * 0.8) * 12).toLocaleString();
+        });
+        if (monthlyLabel) monthlyLabel.classList.toggle('active', !isAnnual);
+        if (annualLabel)  annualLabel.classList.toggle('active',  isAnnual);
+      });
+    }
+
     // Scroll to top
     window.scrollTo(0, 0);
   }
