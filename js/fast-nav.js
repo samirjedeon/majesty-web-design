@@ -165,6 +165,14 @@
       var curMeta = document.querySelector('meta[name="description"]');
       if (newMeta && curMeta) curMeta.setAttribute('content', newMeta.getAttribute('content'));
 
+      // Swap page-specific inline <style> blocks in <head>
+      document.querySelectorAll('head style').forEach(function (s) { s.remove(); });
+      newDoc.querySelectorAll('head style').forEach(function (s) {
+        var style = document.createElement('style');
+        style.textContent = s.textContent;
+        document.head.appendChild(style);
+      });
+
       // Swap main content
       currentMain.innerHTML = newMain.innerHTML;
       currentMain.style.opacity = '1';
