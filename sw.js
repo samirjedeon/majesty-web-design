@@ -1,5 +1,5 @@
-/* Majesty Web Design — Service Worker v1 */
-const CACHE = 'mwd-v1';
+/* Majesty Web Design — Service Worker v3 */
+const CACHE = 'mwd-v3';
 const PRECACHE = [
   '/',
   '/css/styles.min.css',
