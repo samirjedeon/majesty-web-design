@@ -203,13 +203,22 @@
     if (a.hasAttribute('download')) return;
     if (href.startsWith('mailto:') || href.startsWith('tel:')) return;
 
+    // Skip AJAX for homepage — it has canvas particles + typer that need a full init
+    if (a.pathname === '/' || a.pathname === '/index.html') return;
+
     e.preventDefault();
     navigate(a.href);
   }, { passive: false });
 
   /* ─── Handle browser back/forward ─── */
   window.addEventListener('popstate', function (e) {
-    navigate(window.location.href, false);
+    var dest = window.location;
+    // Full reload for homepage to re-initialize particles + typer
+    if (dest.pathname === '/' || dest.pathname === '/index.html') {
+      window.location.reload();
+      return;
+    }
+    navigate(dest.href, false);
   });
 
   /* ─── Prefetch on hover (supplement to instant.page) ─── */
