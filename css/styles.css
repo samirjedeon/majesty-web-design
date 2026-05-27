@@ -1367,6 +1367,11 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--gray-200);
 }
 
+.footer-links a.btn-primary,
+.footer-links a.btn-primary:hover {
+  color: var(--white);
+}
+
 .footer-bottom {
   display: flex;
   align-items: center;
