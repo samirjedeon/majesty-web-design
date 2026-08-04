@@ -268,65 +268,43 @@
     return json;
   }
 
-  /* ─── CONTACT FORM ─── */
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', async e => {
-      e.preventDefault();
-      const btn         = contactForm.querySelector('[type="submit"]');
-      const originalHTML = btn.innerHTML;
+  /* ─── FORM HANDLERS (delegated so forms still work after
+         fast-nav AJAX page swaps replace the DOM) ─── */
+  const FORM_SUBJECTS = {
+    'contact-form':    { subject: 'New Quote Request — Majesty Web Design',          success: 'Message Sent! ✓' },
+    'preview-form':    { subject: 'Free Homepage Preview Request — Majesty Web Design', success: 'Request Received! ✓' },
+    'newsletter-form': { subject: 'Newsletter Signup — Majesty Web Design',          success: 'Subscribed! ✓' }
+  };
 
-      btn.innerHTML = 'Sending&hellip;';
-      btn.disabled  = true;
+  document.addEventListener('submit', async e => {
+    const form = e.target;
+    const cfg  = FORM_SUBJECTS[form.id];
+    if (!cfg) return;
 
-      try {
-        await submitToWeb3Forms(contactForm, 'New Quote Request — Majesty Web Design');
-        btn.textContent       = 'Message Sent! ✓';
-        btn.style.background  = 'linear-gradient(135deg, #10B981, #059669)';
-        contactForm.reset();
-      } catch (err) {
-        btn.textContent      = 'Error — Please Try Again';
-        btn.style.background = 'linear-gradient(135deg, #EF4444, #DC2626)';
-        console.error('Contact form error:', err);
-      }
+    e.preventDefault();
+    const btn          = form.querySelector('[type="submit"]');
+    const originalHTML = btn.innerHTML;
 
-      setTimeout(() => {
-        btn.innerHTML        = originalHTML;
-        btn.disabled         = false;
-        btn.style.background = '';
-      }, 4000);
-    });
-  }
+    btn.innerHTML = 'Sending&hellip;';
+    btn.disabled  = true;
 
-  /* ─── FREE PREVIEW FORM ─── */
-  const previewForm = document.getElementById('preview-form');
-  if (previewForm) {
-    previewForm.addEventListener('submit', async e => {
-      e.preventDefault();
-      const btn          = previewForm.querySelector('[type="submit"]');
-      const originalHTML = btn.innerHTML;
+    try {
+      await submitToWeb3Forms(form, cfg.subject);
+      btn.textContent       = cfg.success;
+      btn.style.background  = 'linear-gradient(135deg, #10B981, #059669)';
+      form.reset();
+    } catch (err) {
+      btn.textContent      = 'Error — Please Try Again';
+      btn.style.background = 'linear-gradient(135deg, #EF4444, #DC2626)';
+      console.error('Form error (' + form.id + '):', err);
+    }
 
-      btn.innerHTML = 'Sending&hellip;';
-      btn.disabled  = true;
-
-      try {
-        await submitToWeb3Forms(previewForm, 'Free Homepage Preview Request — Majesty Web Design');
-        btn.textContent       = 'Request Received! ✓';
-        btn.style.background  = 'linear-gradient(135deg, #10B981, #059669)';
-        previewForm.reset();
-      } catch (err) {
-        btn.textContent      = 'Error — Please Try Again';
-        btn.style.background = 'linear-gradient(135deg, #EF4444, #DC2626)';
-        console.error('Preview form error:', err);
-      }
-
-      setTimeout(() => {
-        btn.innerHTML        = originalHTML;
-        btn.disabled         = false;
-        btn.style.background = '';
-      }, 4000);
-    });
-  }
+    setTimeout(() => {
+      btn.innerHTML        = originalHTML;
+      btn.disabled         = false;
+      btn.style.background = '';
+    }, 4000);
+  });
 
   /* ─── NAV SCROLL INDICATOR ─── */
   const progressBar = document.getElementById('read-progress');
