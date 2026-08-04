@@ -19,7 +19,17 @@
     .check-icon { color: var(--cyan); font-size: 1.1rem; }
     .x-icon { color: var(--gray-600); }
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; }
+    .pricing-how-grid { display: grid; grid-template-columns: 1fr 28px 1fr 28px 1fr; align-items: start; gap: 0.5rem; text-align: center; }
+    .pricing-how-arrow { padding-top: 1.4rem; color: rgba(255,255,255,0.18); font-size: 1.1rem; font-weight: 300; }
+    .pricing-badge-strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.5rem 1rem; }
+    .pricing-badge-sep { color: rgba(255,255,255,0.15); }
     @media (max-width: 900px) { .faq-grid { grid-template-columns: 1fr; } .compare-table { font-size: 0.8125rem; } .compare-table th, .compare-table td { padding: 0.75rem; } }
+    @media (max-width: 640px) {
+      .pricing-how-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .pricing-how-arrow { display: none; }
+      .pricing-badge-sep { display: none; }
+      .pricing-card { padding: var(--space-6); }
+    }
   </style>
   <!-- SEO: Canonical -->
   <link rel="canonical" href="https://www.majestywebdesign.com/pricing.html" />
@@ -117,13 +127,13 @@
       <div class="section-label" style="justify-content:center">Simple Pricing</div>
       <h1 class="section-title reveal" style="font-size:clamp(2.25rem,5vw,3.5rem);margin-bottom:1.25rem">No Surprise Fees.<br /><span class="text-gradient">Just Results.</span></h1>
       <p class="section-subtitle mx-auto reveal delay-1">One flat monthly rate covers the build, hosting, and ongoing support. After 12 months, the website is yours — no strings attached.</p>
-      <div class="reveal delay-2" style="margin-top:1.5rem;display:inline-flex;align-items:center;gap:1.5rem;padding:0.875rem 1.5rem;background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.15);border-radius:3rem">
+      <div class="reveal delay-2 pricing-badge-strip" style="margin-top:1.5rem;padding:0.875rem 1.5rem;background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.15);border-radius:3rem">
         <span style="font-size:0.875rem;color:var(--gray-300)">✓ No setup fees</span>
-        <span style="color:rgba(255,255,255,0.15)">|</span>
+        <span class="pricing-badge-sep">|</span>
         <span style="font-size:0.875rem;color:var(--gray-300)">✓ No hidden charges</span>
-        <span style="color:rgba(255,255,255,0.15)">|</span>
+        <span class="pricing-badge-sep">|</span>
         <span style="font-size:0.875rem;color:var(--cyan)">✓ Own your site after 12 months</span>
-        <span style="color:rgba(255,255,255,0.15)">|</span>
+        <span class="pricing-badge-sep">|</span>
         <a href="/#free-preview" style="font-size:0.875rem;color:var(--cyan);font-weight:700;text-decoration:none;white-space:nowrap">★ Try a free preview first →</a>
       </div>
     </div>
@@ -144,19 +154,19 @@
 
       <!-- HOW IT WORKS -->
       <div class="reveal" style="margin-bottom:2.5rem;padding:1.5rem 2rem;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:1.25rem">
-        <div style="display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr;align-items:start;gap:0.5rem;text-align:center">
+        <div class="pricing-how-grid">
           <div style="padding:0.25rem 0.5rem">
             <div style="width:44px;height:44px;border-radius:50%;background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
             <div style="font-size:0.875rem;font-weight:700;color:var(--white);margin-bottom:0.375rem">We Build Your Site</div>
             <div style="font-size:0.78rem;color:var(--gray-400);line-height:1.55">Custom design &amp; development is included in your monthly plan. Zero upfront build fee.</div>
           </div>
-          <div style="padding-top:1.4rem;color:rgba(255,255,255,0.18);font-size:1.1rem;font-weight:300">→</div>
+          <div class="pricing-how-arrow">→</div>
           <div style="padding:0.25rem 0.5rem">
             <div style="width:44px;height:44px;border-radius:50%;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
             <div style="font-size:0.875rem;font-weight:700;color:var(--white);margin-bottom:0.375rem">Pay Monthly</div>
             <div style="font-size:0.78rem;color:var(--gray-400);line-height:1.55">Your flat rate covers hosting, ongoing updates &amp; support. One bill, no surprises.</div>
           </div>
-          <div style="padding-top:1.4rem;color:rgba(255,255,255,0.18);font-size:1.1rem;font-weight:300">→</div>
+          <div class="pricing-how-arrow">→</div>
           <div style="padding:0.25rem 0.5rem">
             <div style="width:44px;height:44px;border-radius:50%;background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3"/></svg></div>
             <div style="font-size:0.875rem;font-weight:700;color:var(--cyan);margin-bottom:0.375rem">Own It After 12 Months</div>

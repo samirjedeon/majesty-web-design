@@ -26,7 +26,12 @@
     .vs-cell.ours { color: var(--gray-200); background: rgba(0,212,255,0.02); }
     .vs-bad { color: #EF4444; }
     .vs-good { color: var(--cyan); font-weight: 600; }
-    @media (max-width: 768px) { .benefits-grid { grid-template-columns: 1fr; } .vs-cell, .vs-col { padding: 1rem; font-size: 0.8125rem; } }
+    .why-monthly-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    @media (max-width: 768px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+      .vs-cell, .vs-col { padding: 0.75rem; font-size: 0.75rem; }
+      .why-monthly-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
   </style>
   <!-- SEO: Canonical -->
   <link rel="canonical" href="https://www.majestywebdesign.com/monthly-plans.html" />
@@ -114,7 +119,7 @@
   <!-- WHY MONTHLY -->
   <section class="section">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+      <div class="why-monthly-grid">
         <div>
           <div class="section-label reveal">The Majesty Advantage</div>
           <h2 class="section-title reveal delay-1">Why Majesty Beats<br /><span class="text-gradient">Traditional Agencies</span></h2>
