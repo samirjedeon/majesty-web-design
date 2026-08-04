@@ -4,7 +4,7 @@
    - JS/CSS/fonts → cache-first  (versioned URLs, safe to cache forever)
    - Images       → cache-first  (long-lived, rarely change)
 */
-const CACHE = 'mwd-v4';
+const CACHE = 'mwd-v5';
 
 self.addEventListener('install', e => {
   self.skipWaiting();

@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Fonts: non-blocking load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" /></noscript>
   <title>Contact — Majesty Web Design | Get Your Free Quote</title>
   <meta name="description" content="Get in touch with Majesty Web Design. Free consultation, no commitment. We respond within 24 hours. Michigan's top web design agency for small businesses." />
-  <link rel="stylesheet" href="/css/styles.min.css?v=5" />
+  <link rel="stylesheet" href="/css/styles.min.css?v=6" />
   <style>
     .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
     .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
@@ -280,10 +285,8 @@
       d.getElementsByTagName("head")[0].appendChild(s);
     })();
   </script>
-
-  <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU+lmBfgSHVFZxwv+9j+wABnr/m9H3c5bwMnHfuJ7KkxELJSaP"></script>
   <script type="speculationrules">
-  {"prerender":[{"urls":["/","/services/","/packages/","/contact/","/portfolio/","/about/","/pricing/"]}]}
+  {"prefetch":[{"urls":["/","/services/","/packages/","/contact/","/portfolio/","/about/","/pricing/"],"eagerness":"moderate"}]}
   </script>
   <script src="/js/fast-nav.min.js?v=6" defer></script>
 </body>
