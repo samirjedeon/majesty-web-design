@@ -1,0 +1,3 @@
+data/signals.db
+src/__pycache__/
+src/err.log
