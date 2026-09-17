@@ -204,7 +204,11 @@ def main():
     con = record(t, state, score, price)
     backfill_outcomes(con, df["close"])
     n = con.execute("SELECT COUNT(*) FROM signals").fetchone()[0]
-    print(f"\nRecorded to signals.db ({n} rows).")
+    # also export to a git-tracked CSV so the forward record survives
+    # ephemeral environments
+    log_csv = os.path.join(HERE, "..", "data", "signals_log.csv")
+    pd.read_sql_query("SELECT * FROM signals ORDER BY date", con).to_csv(log_csv, index=False)
+    print(f"\nRecorded to signals.db and data/signals_log.csv ({n} rows).")
 
 
 if __name__ == "__main__":
