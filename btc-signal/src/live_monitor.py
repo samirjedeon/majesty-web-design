@@ -68,7 +68,19 @@ def refresh_cm():
 
 
 def refresh_price():
-    """Top up the minute/hourly price history from the Bitstamp API."""
+    """Refresh the price mirror clone, then top up from the Bitstamp API."""
+    import subprocess
+    mirror_repo = os.path.dirname(os.environ.get(
+        "BITSTAMP_DIR", "/home/user/ff137/bitstamp-btcusd-minute-data/data"))
+    if os.path.isdir(os.path.join(mirror_repo, ".git")):
+        try:
+            subprocess.run(["git", "fetch", "--depth", "1", "origin", "main"],
+                           cwd=mirror_repo, check=True, capture_output=True, timeout=600)
+            subprocess.run(["git", "reset", "--hard", "origin/main"],
+                           cwd=mirror_repo, check=True, capture_output=True, timeout=120)
+            log("bitstamp mirror: refreshed from GitHub")
+        except Exception as e:
+            log(f"bitstamp mirror refresh failed ({e}); using cached clone")
     try:
         r = requests.get(BITSTAMP_OHLC, timeout=60)
         r.raise_for_status()
