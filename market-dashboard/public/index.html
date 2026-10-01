@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Market Wall</title>
+  <link rel="preload" href="/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/js/main.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="tb-left">
+      <span id="clock" class="clock"></span><span class="tz"></span>
+      <span id="date" class="date"></span>
+    </div>
+    <div class="tb-center">
+      <div class="mock-banner">Mock data · not real prices</div>
+    </div>
+    <div class="tb-right">
+      <div class="stat">
+        <span class="stat-label">US Markets</span>
+        <span id="us-state" class="mkt-state"></span>
+        <span id="us-sub" class="stat-sub"></span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Crypto</span>
+        <span class="mkt-state" data-state="open">24/7</span>
+      </div>
+      <div class="stat refresh" data-state="ok">
+        <span class="stat-label">Updated</span>
+        <span id="refresh-time" class="stat-value">—</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="grid" class="grid">
+    <div id="boot" class="boot"><span id="boot-msg">Connecting to data server…</span></div>
+  </main>
+
+  <div id="conn" class="conn" hidden>
+    <strong>Connection lost</strong><span class="conn-detail"></span>
+  </div>
+</body>
+</html>

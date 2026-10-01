@@ -1,0 +1,20 @@
+# systemd unit for the data server. Install:
+#   sudo cp kiosk/market-dashboard.service /etc/systemd/system/
+#   (edit User= and WorkingDirectory= below to match your machine)
+#   sudo systemctl enable --now market-dashboard
+[Unit]
+Description=Market Wall Dashboard server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=kiosk
+WorkingDirectory=/home/kiosk/market-dashboard
+ExecStart=/usr/bin/node server/index.js
+Restart=always
+RestartSec=5
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
