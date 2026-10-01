@@ -1,0 +1,18 @@
+# Render Blueprint for the Market Wall Dashboard (lives in market-dashboard/).
+# Render → New → Blueprint → pick this repo and the "market-dashboard" branch.
+services:
+  - type: web
+    name: market-wall
+    runtime: node
+    plan: free
+    branch: market-dashboard
+    rootDir: market-dashboard
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: NODE_VERSION
+        value: "22"

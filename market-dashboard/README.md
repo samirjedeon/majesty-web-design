@@ -28,6 +28,18 @@ npm start            # → open http://127.0.0.1:8080
 * To preview the weekend/closed look with mock data: add `DEV_CLOCK_OFFSET_HOURS=53` to the mock command. Any number of hours works.
 * To test resilience, stop the server while the page is open. Within about 10 seconds a "Connection lost" banner appears, and stale panels turn amber. Start the server again and the page recovers by itself.
 
+## Host it online (Render, free)
+
+The repo root has a `render.yaml` Blueprint for this.
+
+1. Sign up at https://render.com with your GitHub account. Let Render's GitHub app access `majesty-web-design`.
+2. Click **New → Blueprint**, then pick `majesty-web-design` and the branch **market-dashboard**. Click **Apply**.
+3. After 2–3 minutes the service `market-wall` is live at an address like `https://market-wall.onrender.com`. Open it on any device. For the wall PC, run `DASHBOARD_URL=https://…/ kiosk/start-kiosk.sh`.
+
+Things to know about the free plan:
+* It sleeps after about 15 minutes with no visitors. The open dashboard checks in every 2 seconds, which keeps it awake. The first load after it has slept takes up to a minute.
+* Yahoo sometimes blocks cloud-server addresses. If the index and stock panels show NO DATA on Render but work when you run it locally, that's why. A paid data provider avoids it.
+
 ## Layout
 
 ```
