@@ -8,7 +8,8 @@
 //            previous close is the last bar before that session opened, so the
 //            change is right in pre-market, after hours and on weekends too.
 
-import { getJSON, settle } from './http.js';
+import { settle, UA } from './http.js';
+import { RateLimitError } from './errors.js';
 
 const HOSTS = ['https://query1.finance.yahoo.com', 'https://query2.finance.yahoo.com'];
 const prevCloseCache = new Map(); // symbol → { sessionDate, value }
@@ -19,21 +20,58 @@ const sym = (asset) => {
   return s;
 };
 
+// Yahoo turns away many cloud servers unless the request carries a session
+// cookie and "crumb" token, the way a browser's does. Try a plain request
+// first; if that's refused, open a session and retry with it.
+let session = null; // { cookie, crumb, at }
+const SESSION_TTL_MS = 6 * 3600_000;
+
+async function getSession(force = false) {
+  if (!force && session && Date.now() - session.at < SESSION_TTL_MS) return session;
+  const r1 = await fetch('https://fc.yahoo.com/', { headers: { 'user-agent': UA }, redirect: 'manual', signal: AbortSignal.timeout(10_000) });
+  const cookie = (r1.headers.getSetCookie?.() || []).map((c) => c.split(';')[0]).join('; ');
+  if (!cookie) throw new Error('Yahoo: no session cookie');
+  const r2 = await fetch('https://query2.finance.yahoo.com/v1/test/getcrumb', { headers: { 'user-agent': UA, cookie }, signal: AbortSignal.timeout(10_000) });
+  const crumb = (await r2.text()).trim();
+  if (!r2.ok || !crumb || crumb.includes('<') || crumb.length > 64) throw new Error(`Yahoo: crumb refused (HTTP ${r2.status})`);
+  session = { cookie, crumb, at: Date.now() };
+  return session;
+}
+
+async function request(url, headers) {
+  const r = await fetch(url, { headers: { 'user-agent': UA, accept: 'application/json', ...headers }, signal: AbortSignal.timeout(10_000) });
+  const body = await r.json().catch(() => null);
+  return { status: r.status, body, retryAfter: Number(r.headers.get('retry-after')) };
+}
+
+function parse(symbol, { status, body }) {
+  const res = body?.chart?.result?.[0];
+  if (status === 200 && res?.meta) return res;
+  return null;
+}
+
 async function chart(symbol, params) {
   const qs = new URLSearchParams({ includePrePost: 'false', ...params });
-  let lastErr;
-  for (const host of HOSTS) {
-    try {
-      const j = await getJSON(`${host}/v8/finance/chart/${encodeURIComponent(symbol)}?${qs}`, { name: `Yahoo ${symbol}` });
-      const res = j?.chart?.result?.[0];
-      if (!res?.meta) throw new Error(`Yahoo ${symbol}: ${j?.chart?.error?.description || 'empty response'}`);
-      return res;
-    } catch (err) {
-      if (err.retryAfterMs) throw err; // rate limited: don't hit the second host too
-      lastErr = err;
-    }
+  const path = `/v8/finance/chart/${encodeURIComponent(symbol)}`;
+
+  const plain = await request(`${HOSTS[0]}${path}?${qs}`);
+  const ok = parse(symbol, plain);
+  if (ok) return ok;
+  if (plain.status === 404) throw new Error(`Yahoo ${symbol}: ${plain.body?.chart?.error?.description || 'symbol not found'}`);
+
+  // Refused (401/403/429/other): retry once with a browser-style session.
+  let s = await getSession();
+  let withCrumb = await request(`${HOSTS[1]}${path}?${qs}&crumb=${encodeURIComponent(s.crumb)}`, { cookie: s.cookie });
+  if (withCrumb.status === 401) {
+    s = await getSession(true); // crumb expired
+    withCrumb = await request(`${HOSTS[1]}${path}?${qs}&crumb=${encodeURIComponent(s.crumb)}`, { cookie: s.cookie });
   }
-  throw lastErr;
+  const res = parse(symbol, withCrumb);
+  if (res) return res;
+  if (withCrumb.status === 429) {
+    throw new RateLimitError(`Yahoo ${symbol}: rate limited (HTTP 429)`, (withCrumb.retryAfter > 0 ? withCrumb.retryAfter : 120) * 1000);
+  }
+  throw new Error(`Yahoo ${symbol}: HTTP ${plain.status}, then ${withCrumb.status} with session`);
 }
 
 export default {

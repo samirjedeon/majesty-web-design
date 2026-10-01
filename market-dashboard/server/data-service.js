@@ -152,7 +152,7 @@ export class DataService {
         fetchedAt: e.fetchedAt,
         seriesRev: e.seriesRev,
         error: e.error,
-        provider: e.provider.label,
+        provider: e.provider.labelFor?.(id) ?? e.provider.label,
         mock: !!e.provider.mock,
         delayMinutes: e.provider.realtime ? 0 : e.provider.delayMinutes,
       } : {

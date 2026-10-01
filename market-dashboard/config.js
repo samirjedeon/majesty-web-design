@@ -13,11 +13,13 @@ export default {
   // Which data provider feeds each asset type (files in server/providers/).
   //   'coinbase' → crypto, real-time, free, no key
   //   'yahoo'    → US indexes + stocks, free, no key (unofficial API)
+  //   'cnbc'     → US indexes + stocks, free, no key (unofficial API)
+  // A list means "try in order": each asset comes from the first that delivers it.
   //   'mock'     → simulated data, clearly labelled MOCK on screen
   // Override without editing this file: PROVIDER_CRYPTO=mock PROVIDER_US=mock npm start
   providers: {
     crypto: 'coinbase',
-    us: 'yahoo', // indexes + US equities
+    us: ['yahoo', 'cnbc'], // indexes + US equities; CNBC fills in whatever Yahoo can't serve
   },
 
   // ── Assets ────────────────────────────────────────────────────────────────
@@ -32,13 +34,13 @@ export default {
   assets: [
     {
       id: 'ndx', name: 'NASDAQ Composite', ticker: 'IXIC', type: 'index',
-      symbols: { mock: 'IXIC', yahoo: '^IXIC', twelvedata: 'IXIC', fmp: '^IXIC' },
+      symbols: { mock: 'IXIC', cnbc: '.IXIC', yahoo: '^IXIC', twelvedata: 'IXIC', fmp: '^IXIC' },
       decimals: 2, prefix: '',
       mock: { base: 22840, dailyVol: 0.011 },
     },
     {
       id: 'spx', name: 'S&P 500', ticker: 'SPX', type: 'index',
-      symbols: { mock: 'SPX', yahoo: '^GSPC', twelvedata: 'SPX', fmp: '^GSPC' },
+      symbols: { mock: 'SPX', cnbc: '.SPX', yahoo: '^GSPC', twelvedata: 'SPX', fmp: '^GSPC' },
       decimals: 2, prefix: '',
       mock: { base: 6705, dailyVol: 0.009 },
     },
@@ -62,13 +64,13 @@ export default {
     },
     {
       id: 'mstr', name: 'Strategy', ticker: 'MSTR', type: 'equity',
-      symbols: { mock: 'MSTR', yahoo: 'MSTR', twelvedata: 'MSTR', fmp: 'MSTR' },
+      symbols: { mock: 'MSTR', cnbc: 'MSTR', yahoo: 'MSTR', twelvedata: 'MSTR', fmp: 'MSTR' },
       decimals: 2, prefix: '$',
       mock: { base: 342.1, dailyVol: 0.042 },
     },
     {
       id: 'bmnr', name: 'BitMine Immersion', ticker: 'BMNR', type: 'equity',
-      symbols: { mock: 'BMNR', yahoo: 'BMNR', twelvedata: 'BMNR', fmp: 'BMNR' },
+      symbols: { mock: 'BMNR', cnbc: 'BMNR', yahoo: 'BMNR', twelvedata: 'BMNR', fmp: 'BMNR' },
       decimals: 2, prefix: '$',
       mock: { base: 48.6, dailyVol: 0.06 },
     },
