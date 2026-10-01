@@ -175,7 +175,8 @@ body {
   border-radius: 0.3rem;
   color: var(--text-2);
 }
-[data-state="stale"] .badge {
+[data-state="stale"] .badge,
+[data-state="error"] .badge {
   padding: 0.2rem 0.5rem;
   border-radius: 0.3rem;
   background: var(--warn-bg);
@@ -237,7 +238,8 @@ body {
 /* Stale: dim the numbers so old data can't pass for live. */
 [data-state="stale"] .price,
 [data-state="stale"] .change { opacity: 0.38; }
-[data-state="stale"] .foot-right { color: var(--warn); }
+[data-state="stale"] .foot-right,
+[data-state="error"] .foot-left { color: var(--warn); }
 [data-state="stale"] { border-color: rgba(240, 180, 41, 0.35); }
 [data-state="loading"] .price { color: var(--muted); }
 

@@ -2,19 +2,31 @@
 
 A full-screen market display for a wall-mounted 16:9 monitor that runs 24/7. It shows the NASDAQ Composite, S&P 500, BTC (large, in the centre), ETH, SOL, MSTR and BMNR.
 
-**Status: phase 1. All prices are MOCK DATA.** The screen says so in an amber banner and on every panel. Real providers get plugged in once the design is approved.
+**Data sources (live by default):**
+
+| Assets | Provider | Cost | Freshness |
+|---|---|---|---|
+| BTC, ETH, SOL | Coinbase Exchange public API | Free, no key | Real-time, updates every 5 s |
+| NASDAQ Composite (^IXIC), S&P 500 (^GSPC), MSTR, BMNR | Yahoo Finance chart API | Free, no key | Polled every 15 s. Each panel's footer shows the timestamp of the data it is showing. |
+
+Yahoo's API is unofficial and can rate-limit or change without notice. When it does, the panels go STALE or NO DATA instead of showing old numbers. Moving to a paid provider means adding one file in `server/providers/` and changing one line in `config.js`.
 
 ## Run it
 
 Requires Node 20 or newer. There are no npm dependencies to install.
 
 ```bash
+git clone https://github.com/samirjedeon/majesty-web-design.git
+cd majesty-web-design && git checkout market-dashboard
 cd market-dashboard
-npm start            # → http://127.0.0.1:8080
+npm run probe        # optional: checks all 7 symbols are reachable from this machine
+npm start            # → open http://127.0.0.1:8080
 ```
 
-* To preview the weekend/closed look, shift the clock: `DEV_CLOCK_OFFSET_HOURS=53 npm start`. Any number of hours works.
-* To test resilience, stop the server while the page is open. Within about 10 seconds a "Connection lost" banner appears, and after about 45 seconds the crypto panels turn STALE. Start the server again and the page recovers by itself.
+* `npm test` runs the provider parser tests. They don't need the network.
+* For simulated data instead (design work, offline): `PROVIDER_CRYPTO=mock PROVIDER_US=mock npm start`. The screen is then labelled MOCK DATA.
+* To preview the weekend/closed look with mock data: add `DEV_CLOCK_OFFSET_HOURS=53` to the mock command. Any number of hours works.
+* To test resilience, stop the server while the page is open. Within about 10 seconds a "Connection lost" banner appears, and stale panels turn amber. Start the server again and the page recovers by itself.
 
 ## Layout
 
@@ -25,7 +37,9 @@ server/
   data-service.js         ← polls providers, caches, retries with backoff, honours rate limits
   providers/
     index.js              ← provider interface + registry
-    mock.js               ← simulated data (phase 1)
+    coinbase.js           ← crypto (live)
+    yahoo.js              ← indexes + stocks (live)
+    mock.js               ← simulated data
 public/
   index.html, styles.css  ← UI
   js/main.js              ← boot, polling, live/closed/stale rules
@@ -52,6 +66,7 @@ Edit the asset's entry in `config.js`: `name`, `ticker`, and the per-provider `s
 | DELAYED | Same as LIVE, but the provider is delayed (the footer shows by how much) |
 | CLOSED / PRE-MARKET / AFTER HOURS | US asset outside regular hours, showing the last session's close |
 | STALE (amber, dimmed) | No successful update recently, or the feed froze. Old prices are never shown as live. |
+| NO DATA | The provider has never answered since startup. The footer names it, and the server keeps retrying. |
 
 ## Appliance setup (Linux mini-PC, e.g. Ubuntu or Raspberry Pi OS)
 

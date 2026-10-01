@@ -104,7 +104,10 @@ function viewFor(asset, q, market) {
   const crypto = asset.type === 'crypto';
   const r = crypto ? config.refresh.crypto : config.refresh.us;
   const now = serverNow();
-  if (!q || q.price == null) return { state: 'loading', badge: '' };
+  if (!q || q.price == null) {
+    // Give the first fetch a moment, then say plainly that there's no data.
+    return Date.now() - bootAt > 20_000 && q?.error ? { state: 'error', badge: 'NO DATA' } : { state: 'loading', badge: '' };
+  }
 
   const ageSec = (now - q.fetchedAt) / 1000;
   const dataAgeSec = (now - q.asOf) / 1000;
@@ -139,8 +142,10 @@ function render() {
   // Header: last refresh + connection banner.
   const refresh = $('#refresh-time');
   const lost = Date.now() - lastOkAt > config.refresh.browserPoll * 1000 * 4;
-  refresh.textContent = lastOkAt ? fmtTime(lastOkAt + skewMs, config.display.timezone) : '—';
-  refresh.parentElement.dataset.state = lost || anyStale ? 'stale' : 'ok';
+  // Time of the newest market data the server actually received (not just our last poll of it).
+  const lastData = Math.max(0, ...Object.values(snapshot.assets).map((a) => a.fetchedAt || 0));
+  refresh.textContent = lastData ? fmtTime(lastData, config.display.timezone) : '—';
+  refresh.parentElement.dataset.state = lost || anyStale || !lastData ? 'stale' : 'ok';
 
   const banner = $('#conn');
   if (lost) {

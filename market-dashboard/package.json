@@ -10,6 +10,7 @@
   "scripts": {
     "start": "node server/index.js",
     "dev": "node --watch server/index.js",
-    "probe": "node scripts/probe-providers.js"
+    "probe": "node scripts/probe-providers.js",
+    "test": "node --test test/*.test.js"
   }
 }

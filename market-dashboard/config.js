@@ -10,13 +10,14 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default {
-  // Which data provider feeds each asset type.
-  //   'mock'  → realistic simulated data (clearly labelled MOCK on screen)
-  // Real providers get added in server/providers/ and named here.
-  // Can be overridden without editing this file: PROVIDER_CRYPTO=…, PROVIDER_US=…
+  // Which data provider feeds each asset type (files in server/providers/).
+  //   'coinbase' → crypto, real-time, free, no key
+  //   'yahoo'    → US indexes + stocks, free, no key (unofficial API)
+  //   'mock'     → simulated data, clearly labelled MOCK on screen
+  // Override without editing this file: PROVIDER_CRYPTO=mock PROVIDER_US=mock npm start
   providers: {
-    crypto: 'mock',
-    us: 'mock', // indexes + US equities
+    crypto: 'coinbase',
+    us: 'yahoo', // indexes + US equities
   },
 
   // ── Assets ────────────────────────────────────────────────────────────────

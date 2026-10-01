@@ -8,7 +8,7 @@ import { publicConfig } from '../server/public-config.js';
 
 const BUILD_ID = 'preview';
 const pub = publicConfig({ ...config, display: { ...config.display, hideCursor: false, dailyReloadAt: '' } }, BUILD_ID);
-const service = new DataService(config, {});
+const service = new DataService(config, { PROVIDER_CRYPTO: 'mock', PROVIDER_US: 'mock' }); // the preview can't reach market APIs
 service.start();
 
 const realFetch = window.fetch.bind(window);

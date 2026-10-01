@@ -64,7 +64,7 @@ export class AssetPanel {
       setText(this.price, '—');
       setText(this.chgAbs, '');
       setText(this.chgPct, '');
-      setText(this.footLeft, q?.error && view.state !== 'loading' ? q.error : 'Waiting for data…');
+      setText(this.footLeft, view.state === 'error' ? `Can't reach ${q.provider} · retrying` : 'Waiting for data…');
       setText(this.footRight, '');
       this.chart.setTone('stale');
       return;

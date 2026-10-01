@@ -16,16 +16,12 @@
 // point config.providers.crypto / .us at its name.
 
 import mock from './mock.js';
+import coinbase from './coinbase.js';
+import yahoo from './yahoo.js';
 
-export class RateLimitError extends Error {
-  constructor(message, retryAfterMs) {
-    super(message);
-    this.name = 'RateLimitError';
-    this.retryAfterMs = retryAfterMs;
-  }
-}
+export { RateLimitError } from './errors.js';
 
-const registry = { mock };
+const registry = { mock, coinbase, yahoo };
 
 export function getProvider(name) {
   const p = registry[name];
