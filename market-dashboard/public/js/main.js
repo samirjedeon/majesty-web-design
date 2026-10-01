@@ -36,7 +36,7 @@ const serverNow = () => Date.now() + skewMs;
 async function boot() {
   for (let attempt = 0; !config; attempt++) {
     try {
-      config = await getJSON('/api/config');
+      config = await getJSON('api/config');
     } catch {
       $('#boot-msg').textContent = `Connecting to data server… (attempt ${attempt + 1})`;
       await sleep(Math.min(30_000, 1000 * 2 ** attempt));
@@ -78,7 +78,7 @@ function applyScale() {
 async function poll() {
   let delay = config.refresh.browserPoll * 1000;
   try {
-    const q = await getJSON('/api/quotes');
+    const q = await getJSON('api/quotes');
     if (q.buildId !== config.buildId) return location.reload(); // server updated → pick up new UI
     skewMs = q.serverTime - Date.now();
     snapshot = q;
@@ -87,7 +87,7 @@ async function poll() {
 
     const need = [...panels].filter(([id, p]) => q.assets[id] && q.assets[id].seriesRev > 0 && q.assets[id].seriesRev !== p.seriesRev).map(([id]) => id);
     if (need.length) {
-      const series = await getJSON(`/api/series?ids=${need.join(',')}`);
+      const series = await getJSON(`api/series?ids=${need.join(',')}`);
       for (const [id, s] of Object.entries(series)) panels.get(id)?.setSeries(s);
     }
     render();

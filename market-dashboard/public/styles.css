@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/inter-latin-wght.woff2') format('woff2');
+  src: url('fonts/inter-latin-wght.woff2') format('woff2');
   font-weight: 100 900;
   font-display: swap;
 }
@@ -274,3 +274,24 @@ body {
 .conn[hidden] { display: none; }
 .conn strong { letter-spacing: 0.12em; text-transform: uppercase; font-size: 1rem; }
 .conn-detail { color: var(--text-2); }
+
+/* ── Narrow screens (phone / portrait) ──────────────────────────────────
+   The wall layout needs 16:9. On a narrow screen, stack panels and scroll. */
+@media (max-width: 900px) {
+  :root { font-size: 14px; }
+  html, body { height: auto; overflow: auto; }
+  body { grid-template-rows: auto auto; padding-inline: 1rem; }
+  .topbar { grid-template-columns: 1fr; gap: 0.5rem; padding-block: 0.75rem; }
+  .tb-left, .tb-right { flex-wrap: wrap; white-space: normal; }
+  .tb-center { justify-content: flex-start; }
+  .tb-right { justify-content: flex-start; gap: 0.5rem 1.25rem; }
+  .date { margin-left: 0.75rem; font-size: 1.1rem; }
+  .grid { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-rows: 17rem; }
+  .grid > .panel { grid-area: auto !important; }
+  .grid > .panel--featured { grid-row: span 2 !important; order: -1; }
+  .panel--featured .price { font-size: 3.6rem; }
+  .panel--featured .chg-abs { font-size: 1.3rem; }
+  .panel--featured .chg-pct { font-size: 1.5rem; }
+  .price { font-size: 2.4rem; }
+  .conn { white-space: normal; width: calc(100% - 2rem); flex-wrap: wrap; gap: 0.25rem 1rem; }
+}

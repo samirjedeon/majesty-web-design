@@ -8,6 +8,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import config from '../config.js';
 import { DataService } from './data-service.js';
+import { publicConfig } from './public-config.js';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.resolve(ROOT, '../public');
@@ -23,16 +24,6 @@ const MIME = {
   '.mjs': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon',
 };
-
-function publicConfig() {
-  const { assets, layout, refresh, charts, display, usMarket } = config;
-  return {
-    buildId: BUILD_ID,
-    assets: assets.map(({ id, name, ticker, type, decimals, prefix }) => ({ id, name, ticker, type, decimals, prefix })),
-    layout, charts, display, usMarket,
-    refresh: { browserPoll: refresh.browserPoll, crypto: refresh.crypto, us: refresh.us },
-  };
-}
 
 function sendJSON(res, status, body) {
   res.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' });
@@ -61,7 +52,7 @@ const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, 'http://localhost');
   try {
     switch (url.pathname) {
-      case '/api/config': return sendJSON(res, 200, publicConfig());
+      case '/api/config': return sendJSON(res, 200, publicConfig(config, BUILD_ID));
       case '/api/quotes': return sendJSON(res, 200, { buildId: BUILD_ID, ...service.quotesSnapshot() });
       case '/api/series': {
         const ids = (url.searchParams.get('ids') || '').split(',').filter(Boolean);

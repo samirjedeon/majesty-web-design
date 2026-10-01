@@ -8,7 +8,7 @@ import { getProvider } from './providers/index.js';
 const MAX_BACKOFF_MS = 5 * 60_000;
 
 export class DataService {
-  constructor(config, env = process.env) {
+  constructor(config, env = globalThis.process?.env ?? {}) {
     this.config = config;
     this.env = env;
     this.entries = new Map(); // assetId → cached state
