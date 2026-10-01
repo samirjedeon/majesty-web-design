@@ -90,7 +90,8 @@ export class AssetPanel {
       parts.push(`Prev ${p(q.prevClose)}`);
       if (this.featured && q.high != null) parts.push(`H ${p(q.high)}`, `L ${p(q.low)}`);
     }
-    setText(this.footLeft, parts.join('   ·   '));
+    // When stale, say why instead of showing reference levels.
+    setText(this.footLeft, view.state === 'stale' && q.error ? q.error : parts.join('   ·   '));
 
     let right;
     if (view.state === 'stale') right = `Last update ${fmtAgo(view.ageSec)} ago`;

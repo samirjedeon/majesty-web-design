@@ -39,13 +39,21 @@ export function getProvider(name) {
   return names.length === 1 ? single(names[0]) : fallbackChain(names.map(single));
 }
 
-const COOLDOWN_MS = 2 * 60_000;
+const COOLDOWN_MS = 2 * 60_000;      // first rest after a provider refuses
+const MAX_COOLDOWN_MS = 30 * 60_000; // keeps doubling up to this while it keeps refusing
 
 function fallbackChain(providers) {
   const skipUntil = new Map(); // provider → epoch ms; a provider that refused everything rests a while
+  const strikes = new Map();   // provider → consecutive failures
   const lastSource = new Map(); // assetId → provider that last delivered it
   const usable = () => providers.filter((p) => !(skipUntil.get(p) > Date.now()));
-  const rest = (p, err) => skipUntil.set(p, Date.now() + Math.max(COOLDOWN_MS, err?.retryAfterMs || 0));
+  const rest = (p, err) => {
+    const n = (strikes.get(p) || 0) + 1;
+    strikes.set(p, n);
+    const ms = Math.min(MAX_COOLDOWN_MS, COOLDOWN_MS * 2 ** (n - 1));
+    skipUntil.set(p, Date.now() + Math.max(ms, err?.retryAfterMs || 0));
+  };
+  const missing = new Map(); // assetId → why the last attempt didn't deliver it
 
   return {
     name: providers.map((p) => p.name).join('+'),
@@ -53,6 +61,7 @@ function fallbackChain(providers) {
     realtime: providers.every((p) => p.realtime),
     delayMinutes: Math.max(...providers.map((p) => p.delayMinutes || 0)),
     labelFor: (assetId) => (lastSource.get(assetId) || providers[0]).label,
+    whyMissing: (assetId) => missing.get(assetId),
     get label() { return providers.map((p) => p.label).join(' / '); },
 
     async getQuotes(assets, ctx) {
@@ -62,11 +71,14 @@ function fallbackChain(providers) {
         if (!remaining.length) break;
         try {
           const got = await p.getQuotes(remaining, ctx);
-          for (const [id, q] of Object.entries(got)) { out[id] = q; lastSource.set(id, p); }
+          for (const [id, q] of Object.entries(got)) { out[id] = q; lastSource.set(id, p); missing.delete(id); }
           remaining = remaining.filter((a) => !got[a.id]);
+          strikes.delete(p);
+          for (const a of remaining) missing.set(a.id, `${p.label}: no price`);
         } catch (err) {
           lastErr = err;
           rest(p, err);
+          for (const a of remaining) missing.set(a.id, `${p.label}: ${err.message.replace(/^[^:]*:\s*/, '')}`);
           console.warn(`[fallback] ${p.name} quotes failed, trying next: ${err.message}`);
         }
       }

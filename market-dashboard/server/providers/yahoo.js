@@ -25,13 +25,14 @@ const sym = (asset) => {
 // first; if that's refused, open a session and retry with it.
 let session = null; // { cookie, crumb, at }
 const SESSION_TTL_MS = 6 * 3600_000;
+const YAHOO_TIMEOUT_MS = 6_000; // fail fast so a backup provider still gets its turn
 
 async function getSession(force = false) {
   if (!force && session && Date.now() - session.at < SESSION_TTL_MS) return session;
-  const r1 = await fetch('https://fc.yahoo.com/', { headers: { 'user-agent': UA }, redirect: 'manual', signal: AbortSignal.timeout(10_000) });
+  const r1 = await fetch('https://fc.yahoo.com/', { headers: { 'user-agent': UA }, redirect: 'manual', signal: AbortSignal.timeout(YAHOO_TIMEOUT_MS) });
   const cookie = (r1.headers.getSetCookie?.() || []).map((c) => c.split(';')[0]).join('; ');
   if (!cookie) throw new Error('Yahoo: no session cookie');
-  const r2 = await fetch('https://query2.finance.yahoo.com/v1/test/getcrumb', { headers: { 'user-agent': UA, cookie }, signal: AbortSignal.timeout(10_000) });
+  const r2 = await fetch('https://query2.finance.yahoo.com/v1/test/getcrumb', { headers: { 'user-agent': UA, cookie }, signal: AbortSignal.timeout(YAHOO_TIMEOUT_MS) });
   const crumb = (await r2.text()).trim();
   if (!r2.ok || !crumb || crumb.includes('<') || crumb.length > 64) throw new Error(`Yahoo: crumb refused (HTTP ${r2.status})`);
   session = { cookie, crumb, at: Date.now() };
@@ -39,7 +40,7 @@ async function getSession(force = false) {
 }
 
 async function request(url, headers) {
-  const r = await fetch(url, { headers: { 'user-agent': UA, accept: 'application/json', ...headers }, signal: AbortSignal.timeout(10_000) });
+  const r = await fetch(url, { headers: { 'user-agent': UA, accept: 'application/json', ...headers }, signal: AbortSignal.timeout(YAHOO_TIMEOUT_MS) });
   const body = await r.json().catch(() => null);
   return { status: r.status, body, retryAfter: Number(r.headers.get('retry-after')) };
 }

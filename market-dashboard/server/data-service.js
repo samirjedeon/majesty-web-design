@@ -93,7 +93,7 @@ export class DataService {
   }
 
   // Wrap a provider call so a hung request can't freeze the loop.
-  async withTimeout(promise, ms = 15_000) {
+  async withTimeout(promise, ms = 30_000) {
     let t;
     const timeout = new Promise((_, rej) => { t = setTimeout(() => rej(new Error(`timed out after ${ms / 1000}s`)), ms); });
     try { return await Promise.race([promise, timeout]); } finally { clearTimeout(t); }
@@ -110,7 +110,7 @@ export class DataService {
         e.fetchedAt = now;
         e.error = null;
       } else {
-        e.error = 'No quote returned';
+        e.error = group.provider.whyMissing?.(a.id) || 'No quote returned';
       }
     }
   }
