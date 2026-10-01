@@ -108,7 +108,7 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1.6fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr) minmax(0, 1fr);
   grid-template-rows: repeat(3, minmax(0, 1fr));
   gap: var(--gap);
   min-height: 0;
@@ -125,6 +125,7 @@ body {
 .panel {
   display: grid;
   grid-template-rows: auto auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr); /* let charts shrink when the window does */
   min-width: 0; min-height: 0;
   padding: 0.9rem 1.15rem 0.7rem;
   background: var(--panel);
@@ -222,7 +223,7 @@ body {
 [data-tone="down"] .chg-pct { color: var(--down); background: var(--down-bg); }
 [data-tone="flat"] .chg-abs, [data-tone="flat"] .chg-pct { color: var(--text-2); }
 
-.chart { position: relative; min-height: 0; margin: 0.5rem -0.35rem 0.2rem; }
+.chart { position: relative; min-width: 0; min-height: 0; overflow: hidden; margin: 0.5rem -0.35rem 0.2rem; }
 
 .panel-foot {
   display: flex;
