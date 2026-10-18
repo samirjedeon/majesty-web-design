@@ -88,7 +88,11 @@ def load_cm(asset: str) -> pd.DataFrame:
 
 def load_funding() -> pd.Series:
     """Median daily funding across exchanges (sum of daily fundings per
-    exchange, then cross-exchange median) — robust to venue quirks."""
+    exchange, then cross-exchange median) — robust to venue quirks.
+    Funding is research-only (2020-2023); if the source repo is absent
+    (fresh container), return an empty series rather than failing."""
+    if not os.path.isdir(FUNDING_DIR):
+        return pd.Series(dtype=float, name="funding_daily")
     per_ex = {}
     for f in os.listdir(FUNDING_DIR):
         if not f.endswith(".csv"):

@@ -152,6 +152,14 @@ def record(date, state, score, price):
              score REAL, btc_price REAL,
              ret_24h REAL, ret_48h REAL, ret_72h REAL)"""
     )
+    # ephemeral containers lose the db: reseed it from the git-tracked CSV
+    # so the historical record is never truncated
+    log_csv = os.path.join(HERE, "..", "data", "signals_log.csv")
+    n = con.execute("SELECT COUNT(*) FROM signals").fetchone()[0]
+    if n == 0 and os.path.exists(log_csv):
+        prev = pd.read_csv(log_csv)
+        prev.to_sql("signals", con, if_exists="append", index=False)
+        log(f"seeded signals.db from signals_log.csv ({len(prev)} rows)")
     con.execute(
         "INSERT OR REPLACE INTO signals(date, created_utc, state, score, btc_price) "
         "VALUES (?,?,?,?,?)",
